@@ -2,7 +2,7 @@
   "name": "airlinebookingapp",
   "version": "1.0.0",
   "description": "Assignment for Airline Booking App",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/g00nd0/airlineBookingApp/issues"
   },
-  "homepage": "https://github.com/g00nd0/airlineBookingApp#readme"
+  "homepage": "https://github.com/g00nd0/airlineBookingApp#readme",
+  "dependencies": {
+    "bcrypt": "5.0.1",
+    "body-parser": "1.19.0",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "csurf": "1.11.0",
+    "express": "4.17.1",
+    "express-jwt": "6.0.0",
+    "express-session": "1.17.2",
+    "express-validator": "6.12.0",
+    "http-status-codes": "2.1.4",
+    "method-override": "3.0.0",
+    "mongoose": "5.12.14"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
+  }
 }
