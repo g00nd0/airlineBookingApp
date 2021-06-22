@@ -1,0 +1,19 @@
+{
+  "name": "airlinebookingapp",
+  "version": "1.0.0",
+  "description": "Assignment for Airline Booking App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g00nd0/airlineBookingApp.git"
+  },
+  "author": "Mitch Goon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g00nd0/airlineBookingApp/issues"
+  },
+  "homepage": "https://github.com/g00nd0/airlineBookingApp#readme"
+}

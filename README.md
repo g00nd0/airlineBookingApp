@@ -2,7 +2,18 @@
 
 Assignment for Airline Booking App
 
-## Tech Stack:
+## Video Demo Link
+
+## Functionalities
+
+- Implemented
+  1. Blah
+  2. blah blah
+- Not Implemented
+  1. No blah
+  2. no blah blah
+
+## Tech Stack & Justification:
 
 - Frontend
   1. Angular
