@@ -1,0 +1,183 @@
+{
+  "users": [
+    {
+      "id": 11,
+      "status": true,
+      "email": "someuser001@gmail.com",
+      "username": "someuser001",
+      "password": "12345678",
+      "userType": "Individual",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "id": 12,
+      "status": true,
+      "email": "someuser002@gmail.com",
+      "username": "someuser002",
+      "password": "12345678",
+      "userType": "Individual",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "id": 13,
+      "status": true,
+      "email": "someAgent001@gmail.com",
+      "username": "someAgent001",
+      "password": "12345678",
+      "userType": "Agent",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "id": 14,
+      "status": true,
+      "email": "someAgent002@gmail.com",
+      "username": "someAgent002",
+      "password": "12345678",
+      "userType": "Agent",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "id": 15,
+      "status": true,
+      "email": "someAgent003@gmail.com",
+      "username": "someAgent003",
+      "password": "12345678",
+      "userType": "Agent",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "id": 16,
+      "status": true,
+      "username": "grimreaper666",
+      "password": "$2b$10$G0UVSOOIKi0YbRSydPFpYu3Yj7L5vdUm995H9yOIYQvhqLBa/F6/K",
+      "email": "grimreaper666@mail.com",
+      "userType": "Individual",
+      "bookings": [],
+      "listOfAirlines": []
+    },
+    {
+      "status": true,
+      "id": 17
+    },
+    {
+      "username": "g00nd0",
+      "email": "m@g.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 18
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "someAgent001",
+      "status": "Confirmed"
+    },
+    {
+      "id": 2,
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "someAgent002",
+      "status": "Confirmed"
+    },
+    {
+      "id": 3,
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "someAgent003",
+      "status": "Confirmed"
+    },
+    {
+      "id": 4,
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Confirmed"
+    },
+    {
+      "id": 5,
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Confirmed"
+    },
+    {
+      "id": 6,
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Confirmed"
+    },
+    {
+      "id": 7,
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "someAgent002",
+      "status": "Confirmed"
+    }
+  ],
+  "flights": [
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "10/06/2021",
+      "seatsAvailable": 50,
+      "seatsTotal": 200
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/06/2021",
+      "seatsAvailable": 100,
+      "seatsTotal": 200
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "seatsAvailable": 100,
+      "seatsTotal": 200
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "10/06/2021",
+      "seatsAvailable": 69,
+      "seatsTotal": 80
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "10/06/2021",
+      "seatsAvailable": 50,
+      "seatsTotal": 100
+    }
+  ],
+  "usersLoggedIn": [
+    {
+      "id": 1,
+      "username": "g00nd0",
+      "status": true
+    },
+    {
+      "username": "someAgent001",
+      "status": true,
+      "id": 2
+    }
+  ]
+}
