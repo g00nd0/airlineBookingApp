@@ -50,7 +50,11 @@ export class BookingsService {
     );
   }
 
-  // addBookingsToFlight(flights: Flights): Observable<Flights> {
-  //   return this.http.put<Flights>(`${this.apiUrl}/flights/${flights.id}`);
-  // }
+  addBookingsToFlight(flights: Flights): Observable<Flights> {
+    return this.http.put<Flights>(
+      `${this.apiUrl}/flights/${flights.id}`,
+      flights,
+      httpOptions
+    );
+  }
 }
