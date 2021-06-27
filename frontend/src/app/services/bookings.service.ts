@@ -49,4 +49,8 @@ export class BookingsService {
       `${this.apiUrl}/flights?airline=${airline}`
     );
   }
+
+  // addBookingsToFlight(flights: Flights): Observable<Flights> {
+  //   return this.http.put<Flights>(`${this.apiUrl}/flights/${flights.id}`);
+  // }
 }

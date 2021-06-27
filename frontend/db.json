@@ -133,13 +133,15 @@
   ],
   "flights": [
     {
+      "id": 1,
       "airline": "Quantas",
       "callsign": "QA123",
       "dateOfFlight": "10/06/2021",
-      "seatsAvailable": 50,
+      "seatsAvailable": 45,
       "seatsTotal": 200
     },
     {
+      "id": 2,
       "airline": "Emirates",
       "callsign": "EK069",
       "dateOfFlight": "10/06/2021",
@@ -147,6 +149,7 @@
       "seatsTotal": 200
     },
     {
+      "id": 3,
       "airline": "SIA",
       "callsign": "SQ420",
       "dateOfFlight": "10/06/2021",
@@ -154,6 +157,7 @@
       "seatsTotal": 200
     },
     {
+      "id": 4,
       "airline": "SilkAir",
       "callsign": "SA369",
       "dateOfFlight": "10/06/2021",
@@ -161,6 +165,7 @@
       "seatsTotal": 80
     },
     {
+      "id": 5,
       "airline": "Delta",
       "callsign": "DL666",
       "dateOfFlight": "10/06/2021",
