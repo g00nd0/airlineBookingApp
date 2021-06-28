@@ -3,6 +3,6 @@ export class Flights {
   airline!: String;
   callsign!: String;
   dateOfFlight!: String;
-  seatsavailable!: number;
+  seatsAvailable!: number;
   seatsTotal!: number;
 }

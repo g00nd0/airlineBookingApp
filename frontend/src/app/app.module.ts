@@ -21,10 +21,12 @@ import { BookingTableComponent } from './booking-table/booking-table.component';
 import { BookingTableRowComponent } from './booking-table-row/booking-table-row.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CreateBookingsComponent } from './create-bookings/create-bookings.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'bookings', component: BookingsComponent },
   { path: 'create-bookings', component: CreateBookingsComponent },
   { path: 'profile', component: ProfileComponent },
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     BookingTableComponent,
     BookingTableRowComponent,
     CreateBookingsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

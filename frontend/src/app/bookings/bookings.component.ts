@@ -44,7 +44,7 @@ export class BookingsComponent implements OnInit {
   ngOnInit(): void {
     this.bookingsService.getAllBookings().subscribe((bookings) => {
       this.bookings = bookings;
-      console.log(bookings);
+      console;
     });
   }
 }

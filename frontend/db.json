@@ -71,6 +71,14 @@
       "userType": "Agent",
       "status": true,
       "id": 18
+    },
+    {
+      "username": "g00nd01234",
+      "email": "m@g.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 19
     }
   ],
   "bookings": [
@@ -137,7 +145,7 @@
       "airline": "Quantas",
       "callsign": "QA123",
       "dateOfFlight": "10/06/2021",
-      "seatsAvailable": 45,
+      "seatsAvailable": 40,
       "seatsTotal": 200
     },
     {
