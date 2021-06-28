@@ -38,10 +38,8 @@ export class BookingsService {
     return this.http.get<Flights[]>(`${this.apiUrl}/flights`);
   }
 
-  getOneFlight(callsign: String): Observable<Flights[]> {
-    return this.http.get<Flights[]>(
-      `${this.apiUrl}/flights?callsign=${callsign}`
-    );
+  getOneFlight(id: number): Observable<Flights[]> {
+    return this.http.get<Flights[]>(`${this.apiUrl}/flights?id=${id}`);
   }
 
   getAllFLightsByAirline(airline: String): Observable<Flights[]> {

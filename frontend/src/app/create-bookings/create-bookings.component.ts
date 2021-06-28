@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Flights } from '../models/flights';
 import { BookingsService } from '../services/bookings.service';
 @Component({
@@ -7,19 +7,22 @@ import { BookingsService } from '../services/bookings.service';
   styleUrls: ['./create-bookings.component.css'],
 })
 export class CreateBookingsComponent implements OnInit {
+  // @Input() user!: User;
   flights!: Flights;
   allFlights!: Flights[];
-  airline!: string;
-  callsign!: string;
-  dateOfFlight!: string;
   seatsToReserve!: number;
+  selected!: number;
 
   constructor(private bookingsService: BookingsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bookingsService.getAllFlights().subscribe((allFlights) => {
+      this.allFlights = allFlights;
+    });
+  }
 
   onSubmitBooking() {
-    this.bookingsService.getOneFlight(this.callsign).subscribe((flights) => {
+    this.bookingsService.getOneFlight(this.selected).subscribe((flights) => {
       this.flights = flights[0];
       this.flights.seatsAvailable -= this.seatsToReserve;
       this.bookingsService.addBookingsToFlight(this.flights).subscribe(() => {
