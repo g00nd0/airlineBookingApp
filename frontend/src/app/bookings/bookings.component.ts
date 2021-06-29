@@ -31,10 +31,16 @@ export class BookingsComponent implements OnInit {
   }
 
   onSearchSubmit(selectedAgent: string): void {
-    this.bookingsService
-      .getAllBookingsByAgent(selectedAgent)
-      .subscribe((bookings) => {
+    if (selectedAgent == 'all') {
+      this.bookingsService.getAllBookings().subscribe((bookings) => {
         this.bookings = bookings;
       });
+    } else {
+      this.bookingsService
+        .getAllBookingsByAgent(selectedAgent)
+        .subscribe((bookings) => {
+          this.bookings = bookings;
+        });
+    }
   }
 }

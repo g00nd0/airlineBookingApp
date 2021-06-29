@@ -55,4 +55,12 @@ export class BookingsService {
       httpOptions
     );
   }
+
+  addBookingEntry(bookings: Bookings): Observable<Bookings> {
+    return this.http.post<Bookings>(
+      `${this.apiUrl}/bookings`,
+      bookings,
+      httpOptions
+    );
+  }
 }
