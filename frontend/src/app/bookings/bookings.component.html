@@ -17,12 +17,26 @@
     <button class="btn btn-primary">Show Bookings</button>
 </form> -->
 
-<!-- <form>
+<form (ngSubmit)="onSearchSubmit(selectedAgent)">
   <div class="form-group form-inline">
-    Full text search:
-    <input class="form-control ml-2" type="text" [formControl]="filter" />
+    <label for="agentName"
+      >Choose from the dropdown list to filter by agent</label
+    >
+    <select
+      id="agentName"
+      [(ngModel)]="selectedAgent"
+      name="agentName"
+      type="text"
+      class="form-control"
+    >
+      <option value="">Select an Agent</option>
+      <option *ngFor="let agent of agents" value="{{ agent.username }}">
+        {{ agent.username }}
+      </option>
+    </select>
   </div>
-</form> -->
+  <button class="btn btn-primary">Filter</button>
+</form>
 
 <table class="table table-striped">
   <thead>

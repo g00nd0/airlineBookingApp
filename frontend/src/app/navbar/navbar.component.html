@@ -41,13 +41,15 @@
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a [routerLink]="['/']" class="nav-link px-2 text-secondary">Home</a>
+        <a [routerLink]="['/']" class="nav-link px-2 text-primary">Home</a>
       </li>
       <li
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a [routerLink]="['/bookings']" class="nav-link px-2 text-white"
+        <a
+          [routerLink]="['/bookings']"
+          class="nav-link px-2 text-black-50 text-decoration-underline"
           >Bookings</a
         >
       </li>
@@ -55,7 +57,9 @@
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a [routerLink]="['/create-bookings']" class="nav-link px-2 text-white"
+        <a
+          [routerLink]="['/create-bookings']"
+          class="nav-link px-2 text-black-50 text-decoration-underline"
           >Create Bookings</a
         >
       </li>

@@ -22,6 +22,7 @@ import { BookingTableRowComponent } from './booking-table-row/booking-table-row.
 import { LogoutComponent } from './logout/logout.component';
 import { CreateBookingsComponent } from './create-bookings/create-bookings.component';
 import { RegisterComponent } from './register/register.component';
+import { BookingsService } from './services/bookings.service';
 
 const appRoutes: Routes = [
   { path: '', component: ProfileComponent },
@@ -58,7 +59,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [UserService],
+  providers: [UserService, BookingsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

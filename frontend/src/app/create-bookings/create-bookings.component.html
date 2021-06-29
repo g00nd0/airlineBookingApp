@@ -10,7 +10,7 @@
       class="form-control"
       [(ngModel)]="selected"
     >
-      <option value="">Select an Option</option>
+      <option value="" selected>Select an Option</option>
       <option *ngFor="let flight of allFlights" value="{{ flight.id }}">
         {{ flight.airline }} - {{ flight.callsign }} -
         {{ flight.dateOfFlight }} - {{ flight.seatsAvailable }}/{{

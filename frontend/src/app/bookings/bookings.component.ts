@@ -1,40 +1,22 @@
-import { Component, OnInit, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { FormControl } from '@angular/forms';
 import { Flights } from '../models/flights';
 import { Bookings } from '../models/bookings';
-import { UserService } from '../services/user.service';
+import { User } from '../models/users';
 import { BookingsService } from '../services/bookings.service';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-
-// function search(text: string, pipe: PipeTransform): Flights[] {
-//   return COUNTRIES.filter(country => {
-//     const term = text.toLowerCase();
-//     return country.name.toLowerCase().includes(term)
-//         || pipe.transform(country.area).includes(term)
-//         || pipe.transform(country.population).includes(term);
-//   });
-// }
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-bookings',
   templateUrl: './bookings.component.html',
+  providers: [DecimalPipe],
   styleUrls: ['./bookings.component.css'],
 })
 export class BookingsComponent implements OnInit {
   bookings: Bookings[] = [];
   flights: Flights[] = [];
-
-  // countries$: Observable<Country[]>;
-  // filter = new FormControl('');
-
-  // constructor(pipe: DecimalPipe) {
-  //   this.countries$ = this.filter.valueChanges.pipe(
-  //     startWith(''),
-  //     map(text => search(text, pipe))
-  //   );
-  // }
+  agents: User[] = [];
+  selectedAgent!: string;
 
   constructor(
     private bookingsService: BookingsService,
@@ -42,9 +24,17 @@ export class BookingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.bookingsService.getAllBookings().subscribe((bookings) => {
-      this.bookings = bookings;
-      console;
-    });
+    this.bookingsService
+      .getAllBookings()
+      .subscribe((bookings) => (this.bookings = bookings));
+    this.userService.getAgents().subscribe((agents) => (this.agents = agents));
+  }
+
+  onSearchSubmit(selectedAgent: string): void {
+    this.bookingsService
+      .getAllBookingsByAgent(selectedAgent)
+      .subscribe((bookings) => {
+        this.bookings = bookings;
+      });
   }
 }

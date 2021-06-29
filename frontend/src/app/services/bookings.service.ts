@@ -22,9 +22,9 @@ export class BookingsService {
     return this.http.get<Bookings[]>(`${this.apiUrl}/bookings`);
   }
 
-  getAllBookingsByAgent(bookingAgentId: number): Observable<Bookings[]> {
+  getAllBookingsByAgent(bookingAgent: string): Observable<Bookings[]> {
     return this.http.get<Bookings[]>(
-      `${this.apiUrl}/bookings?bookingAgentId=${bookingAgentId}`
+      `${this.apiUrl}/bookings?bookingAgent=${bookingAgent}`
     );
   }
 

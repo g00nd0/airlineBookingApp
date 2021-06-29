@@ -79,6 +79,14 @@
       "userType": "Agent",
       "status": true,
       "id": 19
+    },
+    {
+      "username": "g00nd05678",
+      "email": "w@l.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 20
     }
   ],
   "bookings": [
