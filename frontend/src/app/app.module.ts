@@ -16,7 +16,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
 import { UserService } from './services/user.service';
-import { LoginFailComponent } from './login-fail/login-fail.component';
 import { BookingTableComponent } from './booking-table/booking-table.component';
 import { BookingTableRowComponent } from './booking-table-row/booking-table-row.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -47,7 +46,6 @@ const appRoutes: Routes = [
     NavbarComponent,
     ProfileComponent,
     LoginComponent,
-    LoginFailComponent,
     BookingTableComponent,
     BookingTableRowComponent,
     CreateBookingsComponent,
