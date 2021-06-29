@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../models/users';
 import { Router } from '@angular/router';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,11 @@ export class LoginComponent implements OnInit {
   username!: string;
   password!: string;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private userService: UserService,
+    private sessionService: SessionService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -24,6 +29,7 @@ export class LoginComponent implements OnInit {
     };
 
     this.userService.getOneUser(userLogin.username).subscribe((users) => {
+      console.log(sessionStorage.getItem('currentUser'));
       if (users.length == 0) {
         //if observable returns empty array, means no users found, therefore user does not exist
         console.log('no user exists');
@@ -48,7 +54,8 @@ export class LoginComponent implements OnInit {
                 //redirect to bookings page
                 console.log('already logged in');
               }
-              sessionStorage.setItem('currentUser', userLogin.username);
+              this.sessionService.sessionSet(userLogin.username);
+              console.log(sessionStorage.getItem('currentUser'));
             });
         } else {
           console.log('Login error, check credentials');

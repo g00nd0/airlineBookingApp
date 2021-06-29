@@ -23,6 +23,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { CreateBookingsComponent } from './create-bookings/create-bookings.component';
 import { RegisterComponent } from './register/register.component';
 import { BookingsService } from './services/bookings.service';
+import { SessionService } from './services/session.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: ProfileComponent },
@@ -58,8 +60,9 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
-  providers: [UserService, BookingsService],
+  providers: [UserService, BookingsService, SessionService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -191,14 +191,14 @@
   ],
   "usersLoggedIn": [
     {
-      "id": 1,
-      "username": "g00nd0",
-      "status": true
-    },
-    {
       "username": "someAgent001",
       "status": true,
       "id": 2
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 3
     }
   ]
 }

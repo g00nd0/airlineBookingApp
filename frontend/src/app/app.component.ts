@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from './services/session.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent {
   toggleAddUser() {
     console.log('toggle');
   }
+  constructor(private sessionService: SessionService) {}
 
   ngOnInit(): void {
-    sessionStorage.setItem('currentUser', '');
+    this.sessionService.sessionInit();
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 // import { USERS } from '../mock-users';
@@ -17,6 +17,7 @@ const httpOptions = {
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
   private apiLoggedIn = 'http://localhost:3000/usersLoggedIn';
+  @Output() getCurrentUser: EventEmitter<any> = new EventEmitter();
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
@@ -37,6 +38,7 @@ export class UserService {
 
   logoutUser(user: User): Observable<User> {
     const urlRequest = `${this.apiLoggedIn}/${user.id}`;
+    this.getCurrentUser.emit('');
     return this.http.delete<User>(urlRequest);
   }
 
@@ -50,28 +52,11 @@ export class UserService {
 
   loginUser(username: String): Observable<UserLoggedIn> {
     const loggedInUser = { username: username, status: true };
+    this.getCurrentUser.emit(username);
     return this.http.post<UserLoggedIn>(
       this.apiLoggedIn,
       loggedInUser,
       httpOptions
     );
   }
-
-  // loginUser(user: any): Observable<Boolean> {
-  //   const userLogin = user;
-
-  //   const userExist = this.getOneUser(userLogin.username).subscribe(
-  //     (users) => users.length > 0
-  //   );
-  //   console.log(userExist);
-  //   if (userExist) {
-  //     //user exists
-  //     console.log('user exists');
-  //     return true;
-  //   } else {
-  //     //user does not exist
-  //     console.log('user not found');
-  //     return false;
-  //   }
-  // }
 }
