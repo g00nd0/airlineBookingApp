@@ -80,6 +80,7 @@ export class LoginComponent implements OnInit {
                 });
               } else {
                 //redirect to bookings page
+                this.userService.emitUserLogin(userLogin.username); //emit logged in user for navbar
                 console.log('already logged in');
               }
               this.sessionService.sessionSet(userLogin.username);

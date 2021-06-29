@@ -27,5 +27,6 @@ export class NavbarComponent implements OnInit {
   setCurrentUser(username: string): void {
     this.currentUser = username;
     this.loggedIn = !(this.currentUser === '');
+    console.log(this.loggedIn);
   }
 }

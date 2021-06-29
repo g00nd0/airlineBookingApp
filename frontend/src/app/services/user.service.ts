@@ -52,11 +52,15 @@ export class UserService {
 
   loginUser(username: String): Observable<UserLoggedIn> {
     const loggedInUser = { username: username, status: true };
-    this.getCurrentUser.emit(username);
+    this.emitUserLogin(username);
     return this.http.post<UserLoggedIn>(
       this.apiLoggedIn,
       loggedInUser,
       httpOptions
     );
+  }
+
+  emitUserLogin(username: String) {
+    this.getCurrentUser.emit(username);
   }
 }
