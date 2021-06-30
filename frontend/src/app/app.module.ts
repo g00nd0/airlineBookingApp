@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { UserOneComponent } from './user-one/user-one.component';
 import { ButtonComponent } from './button/button.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,8 +14,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
 import { UserService } from './services/user.service';
-import { BookingTableComponent } from './booking-table/booking-table.component';
-import { BookingTableRowComponent } from './booking-table-row/booking-table-row.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CreateBookingsComponent } from './create-bookings/create-bookings.component';
 import { RegisterComponent } from './register/register.component';
@@ -38,16 +34,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    UserOneComponent,
     ButtonComponent,
     BookingsComponent,
     HeaderComponent,
     NavbarComponent,
     ProfileComponent,
     LoginComponent,
-    BookingTableComponent,
-    BookingTableRowComponent,
+
     CreateBookingsComponent,
     RegisterComponent,
   ],

@@ -7,10 +7,6 @@ import { SessionService } from './services/session.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: String = 'frontend';
-  toggleAddUser() {
-    console.log('toggle');
-  }
   constructor(private sessionService: SessionService) {}
 
   ngOnInit(): void {
