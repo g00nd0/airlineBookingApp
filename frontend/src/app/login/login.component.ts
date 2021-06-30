@@ -23,8 +23,10 @@ export class LoginComponent implements OnInit {
   username!: string;
   password!: string;
 
+  private _failed = new Subject<string>();
   private _success = new Subject<string>();
   failMessage = '';
+  successMessage = '';
 
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
@@ -35,8 +37,9 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._success.subscribe((message) => (this.failMessage = message));
-    this._success.pipe(debounceTime(5000)).subscribe(() => {
+    this._failed.subscribe((message) => (this.failMessage = message));
+    this._success.subscribe((message) => (this.successMessage = message));
+    this._failed.pipe(debounceTime(5000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
       }
@@ -44,6 +47,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginFailMessage(message: string) {
+    this._failed.next(message);
+  }
+
+  loginSuccessMessage(message: string) {
     this._success.next(message);
   }
 
@@ -52,45 +59,57 @@ export class LoginComponent implements OnInit {
       username: this.username,
       password: this.password, // will need bcrypt for this before submitting
     };
-
-    this.userService.getOneUser(userLogin.username).subscribe((users) => {
-      console.log(sessionStorage.getItem('currentUser'));
-      if (users.length == 0) {
-        //if observable returns empty array, means no users found, therefore user does not exist
-        this.loginFailMessage(
-          'Login Error, user does not exist, please register for a new account.'
-        );
-        console.log('no user exists');
-        //redirect to error page?
-      } else {
-        if (
-          users[0].username == userLogin.username &&
-          users[0].password == userLogin.password
-        ) {
-          //check if user already logged in
-          this.userService
-            .getLoggedInUser(userLogin.username)
-            .subscribe((loggedInUser) => {
-              if (loggedInUser.length == 0) {
-                // not logged in yet
-                // set user as logged in
-                this.userService.loginUser(userLogin.username).subscribe(() => {
-                  console.log('login success');
-                  //redirect to bookings page
-                });
-              } else {
-                //redirect to bookings page
-                this.userService.emitUserLogin(userLogin.username); //emit logged in user for navbar
-                console.log('already logged in');
-              }
-              this.sessionService.sessionSet(userLogin.username);
-              console.log(sessionStorage.getItem('currentUser'));
-            });
+    if (!userLogin.username || !userLogin.password) {
+      this.loginFailMessage(
+        'Crendentials cannot be empty, please enter your username and password.'
+      );
+    } else {
+      this.userService.getOneUser(userLogin.username).subscribe((users) => {
+        console.log(sessionStorage.getItem('currentUser'));
+        if (users.length == 0) {
+          //if observable returns empty array, means no users found, therefore user does not exist
+          this.loginFailMessage(
+            'Login Error, user does not exist, please register for a new account.'
+          );
+          console.log('no user exists');
+          //redirect to error page?
         } else {
-          this.loginFailMessage('Login error, please check your credentials');
-          console.log('Login error, check credentials');
+          if (
+            users[0].username == userLogin.username &&
+            users[0].password == userLogin.password
+          ) {
+            //check if user already logged in
+            this.userService
+              .getLoggedInUser(userLogin.username)
+              .subscribe((loggedInUser) => {
+                if (loggedInUser.length == 0) {
+                  // not logged in yet
+                  // set user as logged in
+                  this.userService
+                    .loginUser(userLogin.username)
+                    .subscribe(() => {
+                      console.log('login success');
+                      //redirect to bookings page
+                    });
+                } else {
+                  //redirect to bookings page
+                  this.userService.emitUserLogin(userLogin.username); //emit logged in user for navbar
+                  console.log('already logged in');
+                }
+                this.loginSuccessMessage('Logging in...');
+                this.sessionService.sessionSet(userLogin.username);
+                console.log(sessionStorage.getItem('currentUser'));
+
+                setTimeout(() => {
+                  this.router.navigate(['/bookings']);
+                }, 2000);
+              });
+          } else {
+            this.loginFailMessage('Login error, please check your credentials');
+            console.log('Login error, check credentials');
+          }
         }
-      }
-    });
+      });
+    }
   }
 }

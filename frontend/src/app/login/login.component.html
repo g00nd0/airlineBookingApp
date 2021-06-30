@@ -31,3 +31,11 @@
   (closed)="failMessage = ''"
   >{{ failMessage }}
 </ngb-alert>
+
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="successMessage"
+  type="success"
+  (closed)="successMessage = ''"
+  >{{ successMessage }}
+</ngb-alert>
