@@ -145,6 +145,110 @@
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "someAgent002",
       "status": "Confirmed"
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 8
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 9
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 10
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 11
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 12
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 13
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 14
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 15
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 16
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 17
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 18
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 19
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/06/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 20
     }
   ],
   "flights": [
@@ -161,7 +265,7 @@
       "airline": "Emirates",
       "callsign": "EK069",
       "dateOfFlight": "10/06/2021",
-      "seatsAvailable": 70,
+      "seatsAvailable": 67,
       "seatsTotal": 200
     },
     {
@@ -169,7 +273,7 @@
       "airline": "SIA",
       "callsign": "SQ420",
       "dateOfFlight": "10/06/2021",
-      "seatsAvailable": 100,
+      "seatsAvailable": 90,
       "seatsTotal": 200
     },
     {
@@ -199,6 +303,11 @@
       "username": "g00nd01234",
       "status": true,
       "id": 4
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 5
     }
   ]
 }
