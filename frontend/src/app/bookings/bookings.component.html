@@ -1,23 +1,40 @@
 <h2>Flight Bookings</h2>
 
-<form (ngSubmit)="onSearchSubmit(selectedAgent)">
+<form (ngSubmit)="onSearchSubmit(selectedAirline)">
   <div class="form-group form-inline">
-    <label for="agentName"
-      >Choose from the dropdown list to filter by agent</label
+    <label for="airlineName"
+      >Choose from the dropdown list to filter by airline name:</label
     >
     <select
-      id="agentName"
-      [(ngModel)]="selectedAgent"
-      name="agentName"
+      id="airlineName"
+      [(ngModel)]="selectedAirline"
+      name="airlineName"
       type="text"
       class="form-control"
     >
-      <option value="all" selected>Show All</option>
-      <option *ngFor="let agent of agents" value="{{ agent.username }}">
-        {{ agent.username }}
+      <option value="all" selected>
+        Show All (Clears Date field and shows all dates)
+      </option>
+      <option *ngFor="let airline of airlines" value="{{ airline }}">
+        {{ airline }}
       </option>
     </select>
+    <label for="dateOfFlightSelect">Choose Date of Departure:</label>
+    <input
+      type="date"
+      name="dateOfFlightSelect"
+      id="dateOfFlightSelect"
+      [(ngModel)]="selectedDate"
+      class="form-control"
+    />
   </div>
+  <ngb-alert
+    #selfClosingAlert
+    *ngIf="failMessage"
+    type="danger"
+    (closed)="failMessage = ''"
+    >{{ failMessage }}
+  </ngb-alert>
   <button class="btn btn-primary">Filter</button>
 </form>
 

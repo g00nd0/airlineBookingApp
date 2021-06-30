@@ -641,6 +641,134 @@
       "bookingAgent": "g00nd0",
       "status": "Reserved",
       "id": 68
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 69
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 70
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 71
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 72
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 73
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 74
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 75
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 76
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 77
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 78
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 79
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 80
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 81
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 82
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 83
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "bookingAgent": "g00nd0",
+      "status": "Reserved",
+      "id": 84
     }
   ],
   "flights": [
@@ -656,7 +784,7 @@
       "id": 2,
       "airline": "Emirates",
       "callsign": "EK069",
-      "dateOfFlight": "10/06/2021",
+      "dateOfFlight": "11/06/2021",
       "seatsAvailable": 61,
       "seatsTotal": 200
     },
@@ -664,7 +792,7 @@
       "id": 3,
       "airline": "SIA",
       "callsign": "SQ420",
-      "dateOfFlight": "10/06/2021",
+      "dateOfFlight": "12/06/2021",
       "seatsAvailable": 89,
       "seatsTotal": 200
     },
@@ -672,7 +800,7 @@
       "id": 4,
       "airline": "SilkAir",
       "callsign": "SA369",
-      "dateOfFlight": "10/06/2021",
+      "dateOfFlight": "13/06/2021",
       "seatsAvailable": 69,
       "seatsTotal": 80
     },
@@ -680,9 +808,25 @@
       "id": 5,
       "airline": "Delta",
       "callsign": "DL666",
-      "dateOfFlight": "10/06/2021",
+      "dateOfFlight": "14/06/2021",
       "seatsAvailable": 50,
       "seatsTotal": 100
+    },
+    {
+      "id": 6,
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "seatsAvailable": 37,
+      "seatsTotal": 200
+    },
+    {
+      "id": 7,
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "seatsAvailable": 186,
+      "seatsTotal": 200
     }
   ],
   "usersLoggedIn": [
@@ -695,6 +839,11 @@
       "username": "g00nd01234",
       "status": true,
       "id": 4
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 5
     }
   ]
 }

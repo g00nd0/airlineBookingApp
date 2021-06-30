@@ -42,10 +42,20 @@ export class BookingsService {
     return this.http.get<Flights[]>(`${this.apiUrl}/flights?id=${id}`);
   }
 
-  getAllFLightsByAirline(airline: String): Observable<Flights[]> {
-    return this.http.get<Flights[]>(
-      `${this.apiUrl}/flights?airline=${airline}`
-    );
+  getAllFLightsByAirline(
+    agent: String,
+    airline?: String,
+    date?: String
+  ): Observable<Bookings[]> {
+    if (date && airline) {
+      return this.http.get<Bookings[]>(
+        `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}&dateOfFlight=${date}`
+      );
+    } else {
+      return this.http.get<Bookings[]>(
+        `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}`
+      );
+    }
   }
 
   addBookingsToFlight(flights: Flights): Observable<Flights> {

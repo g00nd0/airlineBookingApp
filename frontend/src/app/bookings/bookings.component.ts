@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Flights } from '../models/flights';
 import { Bookings } from '../models/bookings';
 import { User } from '../models/users';
 import { BookingsService } from '../services/bookings.service';
 import { UserService } from '../services/user.service';
+import { SessionService } from '../services/session.service';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-bookings',
@@ -14,33 +18,87 @@ import { UserService } from '../services/user.service';
 })
 export class BookingsComponent implements OnInit {
   bookings: Bookings[] = [];
-  flights: Flights[] = [];
+  airlines!: String[];
   agents: User[] = [];
-  selectedAgent!: string;
+  selectedAirline!: string;
+  selectedDate!: string;
+
+  private _failed = new Subject<string>();
+  failMessage = '';
+
+  @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
   constructor(
     private bookingsService: BookingsService,
-    private userService: UserService
+    private userService: UserService,
+    private sessionService: SessionService
   ) {}
 
-  ngOnInit(): void {
-    this.bookingsService
-      .getAllBookings()
-      .subscribe((bookings) => (this.bookings = bookings));
-    this.userService.getAgents().subscribe((agents) => (this.agents = agents));
+  formatDate(date: string): String {
+    const d = new Date(date);
+    const month =
+      d.getMonth() > 9 ? d.getMonth().toString() + 1 : '0' + (d.getMonth() + 1);
+    return (
+      d.getDate().toString().padStart(2, '0') +
+      '/' +
+      month +
+      '/' +
+      d.getFullYear()
+    );
   }
 
-  onSearchSubmit(selectedAgent: string): void {
-    if (selectedAgent == 'all') {
-      this.bookingsService.getAllBookings().subscribe((bookings) => {
-        this.bookings = bookings;
-      });
-    } else {
+  ngOnInit(): void {
+    this._failed.subscribe((message) => (this.failMessage = message));
+    this._failed.pipe(debounceTime(5000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
+    this.bookingsService
+      .getAllBookingsByAgent(this.sessionService.sessionGet())
+      .subscribe((bookings) => (this.bookings = bookings));
+    this.bookingsService.getAllFlights().subscribe((airlines) => {
+      this.airlines = [...new Set(airlines.map((airline) => airline.airline))];
+      console.log(this.airlines);
+
+      return this.airlines;
+    });
+    // this.userService.getAgents().subscribe((agents) => (this.agents = agents));
+  }
+
+  loginFailMessage(message: string) {
+    this._failed.next(message);
+  }
+
+  resetFields(): void {
+    this.selectedDate = '';
+    this.selectedAirline = '';
+  }
+
+  onSearchSubmit(selectedAirline: string): void {
+    if (selectedAirline == 'all') {
       this.bookingsService
-        .getAllBookingsByAgent(selectedAgent)
+        .getAllBookingsByAgent(this.sessionService.sessionGet())
         .subscribe((bookings) => {
           this.bookings = bookings;
+          this.selectedDate = '';
         });
+    } else {
+      if (this.selectedDate) {
+        this.bookingsService
+          .getAllFLightsByAirline(
+            this.sessionService.sessionGet(),
+            selectedAirline,
+            this.formatDate(this.selectedDate)
+          )
+          .subscribe((bookings) => {
+            this.bookings = bookings;
+          });
+      } else {
+        this.loginFailMessage(
+          'Invalid search, please input a valid airline and/or date'
+        );
+      }
     }
   }
 }
