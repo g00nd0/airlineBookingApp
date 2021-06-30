@@ -26,6 +26,7 @@
       id="seatsToReserve"
       type="number"
       [(ngModel)]="seatsToReserve"
+      min="1"
       name="seatsToReserve"
       class="form-control"
     />
@@ -39,4 +40,12 @@
   type="danger"
   (closed)="failMessage = ''"
   >{{ failMessage }}
+</ngb-alert>
+
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="successMessage"
+  type="success"
+  (closed)="successMessage = ''"
+  >{{ successMessage }}
 </ngb-alert>

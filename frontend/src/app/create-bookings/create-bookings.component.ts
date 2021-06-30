@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -17,26 +18,40 @@ export class CreateBookingsComponent implements OnInit {
   seatsToReserve!: number;
   selected!: number;
 
+  private _failed = new Subject<string>();
   private _success = new Subject<string>();
   failMessage = '';
+  successMessage = '';
 
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
-  constructor(private bookingsService: BookingsService) {}
+  constructor(
+    private bookingsService: BookingsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.bookingsService.getAllFlights().subscribe((allFlights) => {
-      this.allFlights = allFlights;
-    });
-    this._success.subscribe((message) => (this.failMessage = message));
-    this._success.pipe(debounceTime(5000)).subscribe(() => {
+    this.getLatestFlights();
+    this._failed.subscribe((message) => (this.failMessage = message));
+    this._success.subscribe((message) => (this.successMessage = message));
+    this._failed.pipe(debounceTime(5000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
       }
     });
   }
 
+  getLatestFlights(): void {
+    this.bookingsService.getAllFlights().subscribe((allFlights) => {
+      this.allFlights = allFlights;
+    });
+  }
+
   createFailMessage(message: string) {
+    this._failed.next(message);
+  }
+
+  createSuccessMessage(message: string) {
     this._success.next(message);
   }
 
@@ -44,10 +59,11 @@ export class CreateBookingsComponent implements OnInit {
     this.bookingsService.getOneFlight(this.selected).subscribe((flights) => {
       this.flights = flights[0];
 
-      console.log(this.flights);
-
       if (this.flights) {
-        if (this.seatsToReserve <= this.flights.seatsAvailable) {
+        if (
+          this.seatsToReserve <= this.flights.seatsAvailable &&
+          this.seatsToReserve > 0
+        ) {
           this.flights.seatsAvailable -= this.seatsToReserve;
           this.bookingsService
             .addBookingsToFlight(this.flights)
@@ -68,9 +84,15 @@ export class CreateBookingsComponent implements OnInit {
                     console.log('booking success for ' + i);
                   });
               }
+              this.createSuccessMessage(
+                'Booking Created, redirecting to Bookings page...'
+              );
+              this.getLatestFlights();
+              setTimeout(() => {
+                this.router.navigate(['/bookings']);
+              }, 3000);
             });
         } else if (this.seatsToReserve > this.flights.seatsAvailable) {
-          console.log(this.seatsToReserve);
           this.createFailMessage(
             "You've selected too many seats, please enter a number less than the available seats."
           );
