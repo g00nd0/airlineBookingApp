@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary h-auto">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary h-auto" id="navbar">
   <button
     class="navbar-toggler"
     type="button"
@@ -54,7 +54,11 @@
         >
       </li>
       <li class="nav-item">
-        <p *ngIf="loggedIn" class="nav-link text-white align-text-bottom">
+        <p
+          *ngIf="loggedIn"
+          class="nav-link text-white align-text-bottom"
+          id="welcome"
+        >
           Welcome, {{ currentUser }}!
         </p>
       </li>

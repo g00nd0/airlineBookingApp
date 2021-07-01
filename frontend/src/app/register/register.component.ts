@@ -95,8 +95,8 @@ export class RegisterComponent implements OnInit {
 
     if (
       failMsg.length > 0 ||
-      !this.username ||
-      !this.password ||
+      !(this.username.length > 7) ||
+      !(this.password.length > 7) ||
       !this.passwordVer ||
       !this.email ||
       !this.userType

@@ -103,6 +103,54 @@
       "userType": "Agent",
       "status": true,
       "id": 22
+    },
+    {
+      "username": "qwerty1234",
+      "email": "w@w.com",
+      "password": "pass1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 23
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 24
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 25
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 26
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 27
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 28
     }
   ],
   "bookings": [
