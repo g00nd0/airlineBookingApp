@@ -95,6 +95,14 @@
       "userType": "Agent",
       "status": true,
       "id": 21
+    },
+    {
+      "username": "mitchellgoon",
+      "email": "w@o.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 22
     }
   ],
   "bookings": [
@@ -252,11 +260,6 @@
       "username": "mitchgoon",
       "status": true,
       "id": 5
-    },
-    {
-      "username": "g00nd0",
-      "status": true,
-      "id": 6
     }
   ]
 }

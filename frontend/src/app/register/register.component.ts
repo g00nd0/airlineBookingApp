@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { User } from '../models/users';
-import { first, catchError, retry, debounceTime } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,13 +14,13 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
-  loading = false;
-  submitted = false;
+  formValid: boolean = false;
 
   title: String = 'Register';
   username!: String;
   email!: String;
   password!: String;
+  passwordVer!: String;
   userType!: String;
   newUser: Observable<any> | undefined;
   user!: Observable<any>;
@@ -29,15 +29,16 @@ export class RegisterComponent implements OnInit {
   private _success = new Subject<string>();
   failMessage = '';
   successMessage = '';
+  userFailMessage = '';
+  emailFailMessage = '';
+  passwordFailMessage = '';
+  passwordVerFailMessage = '';
+  typeFailMessage = '';
 
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
-  // constructor(private http: HttpClient) {}
   constructor(private userService: UserService, private router: Router) {}
   ngOnInit(): void {
-    // getUser() {
-    this.user = this.userService.getUsers(); //should return "pssst"
-    console.log(this.user);
     this._failed.subscribe((message) => (this.failMessage = message));
     this._success.subscribe((message) => (this.successMessage = message));
     this._failed.pipe(debounceTime(5000)).subscribe(() => {
@@ -45,7 +46,6 @@ export class RegisterComponent implements OnInit {
         this.selfClosingAlert.close();
       }
     });
-    // }
   }
 
   createFailMessage(message: string) {
@@ -56,6 +56,58 @@ export class RegisterComponent implements OnInit {
     this._success.next(message);
   }
 
+  registerCheck(inputId: String, inputText: String) {
+    let failMsg = '';
+
+    if (inputId === 'username') {
+      if (inputText.length < 8 || inputText.match(' ')) {
+        failMsg =
+          'Username must be at least 8 characters long and contain no spaces.';
+      }
+    } else if (inputId === 'password') {
+      if (
+        inputText.length < 8 ||
+        inputText.match(' ') ||
+        !inputText.match(
+          /^([0-9 A-Z]*[A-Z][0-9 A-Z]*[0-9][0-9 A-Z]*|[0-9 A-Z]*[0-9][0-9 A-Z]*[A-Z][0-9 A-Z]*)$/i
+        )
+      ) {
+        failMsg =
+          'Password must be alphanumeric, at least 8 characters long and contain no spaces.';
+      }
+    } else if (inputId === 'passwordVer') {
+      if (inputText !== this.password) {
+        failMsg = 'Password does not match';
+      }
+    } else if (inputId === 'email') {
+      if (
+        !inputText.match(
+          /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/i
+        )
+      ) {
+        failMsg = 'Not a valid email address';
+      }
+    } else if (inputId === 'userType') {
+      if (!(inputText === 'Individual' || inputText === 'Agent')) {
+        failMsg = 'Invalid Option, please select from the dropdown list';
+      }
+    }
+
+    if (
+      failMsg.length > 0 ||
+      !this.username ||
+      !this.password ||
+      !this.passwordVer ||
+      !this.email ||
+      !this.userType
+    ) {
+      this.createFailMessage(failMsg);
+      this.formValid = false;
+    } else {
+      this.formValid = true;
+    }
+  }
+
   onRegisterSubmit() {
     const newUserDetails: User = {
       username: this.username,
@@ -64,14 +116,6 @@ export class RegisterComponent implements OnInit {
       userType: this.userType,
       status: true,
     };
-    console.log(newUserDetails);
-
-    // if username length is greater than 8
-    // email is a valid email addr
-    // pw is at least 8 char, and is alphanumeric
-    // userType is not blank
-    //
-    // else fail
 
     this.userService.registerUser(newUserDetails).subscribe(() => {
       this.createSuccessMessage(

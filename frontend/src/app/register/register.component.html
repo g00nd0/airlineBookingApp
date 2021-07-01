@@ -10,6 +10,7 @@
       [(ngModel)]="username"
       name="username"
       class="form-control"
+      (ngModelChange)="registerCheck('username', username)"
     />
   </div>
   <div class="form-group">
@@ -20,16 +21,29 @@
       [(ngModel)]="password"
       name="password"
       class="form-control"
+      (ngModelChange)="registerCheck('password', password)"
+    />
+  </div>
+  <div class="form-group">
+    <label for="passwordVer">Verify Password</label>
+    <input
+      id="passwordVer"
+      type="password"
+      [(ngModel)]="passwordVer"
+      name="passwordVer"
+      class="form-control"
+      (ngModelChange)="registerCheck('passwordVer', passwordVer)"
     />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
     <input
       id="email"
-      type="text"
+      type="email"
       [(ngModel)]="email"
       name="email"
       class="form-control"
+      (ngModelChange)="registerCheck('email', email)"
     />
   </div>
   <div class="form-group">
@@ -40,12 +54,13 @@
       name="userType"
       type="text"
       class="form-control"
+      (ngModelChange)="registerCheck('userType', userType)"
     >
       <option value="Individual">Individual</option>
       <option value="Agent">Booking Agent</option>
     </select>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" [disabled]="!formValid">Submit</button>
 </form>
 
 <ngb-alert
