@@ -66,7 +66,7 @@ export class BookingsComponent implements OnInit {
     // this.userService.getAgents().subscribe((agents) => (this.agents = agents));
   }
 
-  loginFailMessage(message: string) {
+  searchFailMessage(message: string) {
     this._failed.next(message);
   }
 
@@ -81,10 +81,10 @@ export class BookingsComponent implements OnInit {
         .getAllBookingsByAgent(this.sessionService.sessionGet())
         .subscribe((bookings) => {
           this.bookings = bookings;
-          this.selectedDate = '';
+          this.resetFields();
         });
     } else {
-      if (this.selectedDate) {
+      if (this.selectedDate && selectedAirline) {
         this.bookingsService
           .getAllFLightsByAirline(
             this.sessionService.sessionGet(),
@@ -94,8 +94,18 @@ export class BookingsComponent implements OnInit {
           .subscribe((bookings) => {
             this.bookings = bookings;
           });
+      } else if (this.selectedDate) {
+        this.bookingsService
+          .getAllFLightsByAirline(
+            this.sessionService.sessionGet(),
+            '',
+            this.formatDate(this.selectedDate)
+          )
+          .subscribe((bookings) => {
+            this.bookings = bookings;
+          });
       } else {
-        this.loginFailMessage(
+        this.searchFailMessage(
           'Invalid search, please input a valid airline and/or date'
         );
       }

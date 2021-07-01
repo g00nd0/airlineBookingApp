@@ -51,6 +51,26 @@ export class BookingsService {
       return this.http.get<Bookings[]>(
         `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}&dateOfFlight=${date}`
       );
+    } else if (!airline) {
+      return this.http.get<Bookings[]>(
+        `${this.apiUrl}/bookings?bookingAgent=${agent}&dateOfFlight=${date}`
+      );
+    } else {
+      return this.http.get<Bookings[]>(
+        `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}`
+      );
+    }
+  }
+
+  getAllFLightsByDate(
+    agent: String,
+    airline?: String,
+    date?: String
+  ): Observable<Bookings[]> {
+    if (date && airline) {
+      return this.http.get<Bookings[]>(
+        `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}&dateOfFlight=${date}`
+      );
     } else {
       return this.http.get<Bookings[]>(
         `${this.apiUrl}/bookings?airline=${airline}&bookingAgent=${agent}`

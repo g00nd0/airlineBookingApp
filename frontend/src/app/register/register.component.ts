@@ -66,6 +66,13 @@ export class RegisterComponent implements OnInit {
     };
     console.log(newUserDetails);
 
+    // if username length is greater than 8
+    // email is a valid email addr
+    // pw is at least 8 char, and is alphanumeric
+    // userType is not blank
+    //
+    // else fail
+
     this.userService.registerUser(newUserDetails).subscribe(() => {
       this.createSuccessMessage(
         'Account Created, redirecting to login page...'

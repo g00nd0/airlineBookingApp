@@ -1,6 +1,7 @@
 <h2>Flight Bookings</h2>
 
-<form (ngSubmit)="onSearchSubmit(selectedAirline)">
+<form (ngSubmit)="onSearchSubmit('all')">
+  <!-- <form> -->
   <div class="form-group form-inline">
     <label for="airlineName"
       >Choose from the dropdown list to filter by airline name:</label
@@ -11,14 +12,14 @@
       name="airlineName"
       type="text"
       class="form-control"
+      (ngModelChange)="onSearchSubmit(selectedAirline)"
     >
-      <option value="all" selected>
-        Show All (Clears Date field and shows all dates)
-      </option>
       <option *ngFor="let airline of airlines" value="{{ airline }}">
         {{ airline }}
       </option>
     </select>
+  </div>
+  <div class="form-group form-inline">
     <label for="dateOfFlightSelect">Choose Date of Departure:</label>
     <input
       type="date"
@@ -26,6 +27,9 @@
       id="dateOfFlightSelect"
       [(ngModel)]="selectedDate"
       class="form-control"
+      (ngModelChange)="
+        selectedAirline ? onSearchSubmit(selectedAirline) : onSearchSubmit('')
+      "
     />
   </div>
   <ngb-alert
@@ -35,7 +39,7 @@
     (closed)="failMessage = ''"
     >{{ failMessage }}
   </ngb-alert>
-  <button class="btn btn-primary">Filter</button>
+  <button class="btn btn-primary">Show All</button>
 </form>
 
 <table class="table table-striped">
