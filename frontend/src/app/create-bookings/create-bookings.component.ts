@@ -89,6 +89,7 @@ export class CreateBookingsComponent implements OnInit {
                 ...rest,
                 bookingAgent:
                   sessionStorage.getItem('currentUser') || 'unknown',
+                customerName: 'No Customer Booked',
                 status: 'Reserved',
               };
 

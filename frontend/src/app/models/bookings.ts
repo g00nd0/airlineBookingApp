@@ -4,5 +4,6 @@ export class Bookings {
   callsign!: String;
   dateOfFlight!: String;
   bookingAgent!: String;
+  customerName!: String;
   status!: String;
 }

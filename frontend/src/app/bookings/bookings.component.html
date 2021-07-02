@@ -49,6 +49,7 @@
       <th scope="col">Airline</th>
       <th scope="col">Callsign</th>
       <th scope="col">Departure Date</th>
+      <th scope="col">Customer Name</th>
       <th scope="col">Booking Agent</th>
       <th scope="col">Status</th>
     </tr>
@@ -64,6 +65,9 @@
       </td>
       <td>
         {{ booking.dateOfFlight }}
+      </td>
+      <td>
+        {{ booking.customerName }}
       </td>
       <td>
         {{ booking.bookingAgent }}
