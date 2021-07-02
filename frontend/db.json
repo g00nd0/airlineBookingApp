@@ -459,6 +459,46 @@
       "dateOfFlight": "10/07/2021",
       "seatsAvailable": 176,
       "seatsTotal": 200
+    },
+    {
+      "id": 8,
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "08/07/2021",
+      "seatsAvailable": 6,
+      "seatsTotal": 200
+    },
+    {
+      "id": 9,
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "09/07/2021",
+      "seatsAvailable": 59,
+      "seatsTotal": 200
+    },
+    {
+      "id": 10,
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "04/07/2021",
+      "seatsAvailable": 84,
+      "seatsTotal": 200
+    },
+    {
+      "id": 11,
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "seatsAvailable": 69,
+      "seatsTotal": 80
+    },
+    {
+      "id": 12,
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "seatsAvailable": 50,
+      "seatsTotal": 100
     }
   ],
   "usersLoggedIn": [
@@ -481,6 +521,11 @@
       "username": "bookingagent1",
       "status": true,
       "id": 6
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 7
     }
   ]
 }

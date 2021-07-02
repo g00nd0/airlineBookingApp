@@ -17,6 +17,7 @@ export class CreateBookingsComponent implements OnInit {
   allFlights!: Flights[];
   seatsToReserve!: number;
   selected!: number;
+  currentDate: Date = new Date();
 
   private _failed = new Subject<string>();
   private _success = new Subject<string>();
@@ -43,7 +44,21 @@ export class CreateBookingsComponent implements OnInit {
 
   getLatestFlights(): void {
     this.bookingsService.getAllFlights().subscribe((allFlights) => {
-      this.allFlights = allFlights;
+      const validFlightsList: Flights[] = [];
+
+      allFlights.forEach((flight) => {
+        const selectedDateParts = flight.dateOfFlight.split('/');
+        const selectedDate = new Date(
+          +selectedDateParts[2],
+          +selectedDateParts[1] - 1,
+          +selectedDateParts[0]
+        ); //formatted date of flight
+        if (selectedDate >= this.currentDate) {
+          validFlightsList.push(flight);
+        }
+      });
+
+      this.allFlights = validFlightsList;
     });
   }
 
