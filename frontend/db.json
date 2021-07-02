@@ -199,6 +199,14 @@
       "userType": "Agent",
       "status": true,
       "id": 34
+    },
+    {
+      "username": "abcd123456",
+      "email": "m@e.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 35
     }
   ],
   "bookings": [
@@ -208,7 +216,7 @@
       "callsign": "QA123",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "someAgent001",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 2,
@@ -216,7 +224,7 @@
       "callsign": "EK069",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "someAgent002",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 3,
@@ -224,7 +232,7 @@
       "callsign": "SQ420",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "someAgent003",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 4,
@@ -233,7 +241,7 @@
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
       "customerName": "someuser001",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 5,
@@ -242,7 +250,7 @@
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
       "customerName": "someuser002",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 6,
@@ -251,7 +259,7 @@
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
       "customerName": "grimreaper666",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "id": 7,
@@ -259,7 +267,7 @@
       "callsign": "DL666",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "someAgent002",
-      "status": "Confirmed"
+      "status": "Reserved"
     },
     {
       "airline": "SIA",
@@ -390,14 +398,6 @@
       "dateOfFlight": "12/06/2021",
       "bookingAgent": "mitchellgkh",
       "status": "Reserved",
-      "id": 23
-    },
-    {
-      "airline": "SIA",
-      "callsign": "SQ420",
-      "dateOfFlight": "12/06/2021",
-      "bookingAgent": "mitchellgkh",
-      "status": "Reserved",
       "id": 24
     },
     {
@@ -409,13 +409,31 @@
       "id": 25
     },
     {
-      "airline": "Quantas",
-      "callsign": "QA123",
-      "dateOfFlight": "07/07/2021",
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
       "bookingAgent": "g00nd0",
-      "customerName": "No Customer Booked",
+      "customerName": "Foo Bar",
       "status": "Reserved",
-      "id": 26
+      "id": 27
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "bookingAgent": "g00nd0",
+      "customerName": "Some Random Customer",
+      "status": "Reserved",
+      "id": 28
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "bookingAgent": "g00nd0",
+      "customerName": "Some Random Customer",
+      "status": "Reserved",
+      "id": 29
     }
   ],
   "flights": [
@@ -472,7 +490,7 @@
       "airline": "Emirates",
       "callsign": "EK069",
       "dateOfFlight": "10/07/2021",
-      "seatsAvailable": 176,
+      "seatsAvailable": 173,
       "seatsTotal": 200
     },
     {
@@ -496,7 +514,7 @@
       "airline": "SIA",
       "callsign": "SQ420",
       "dateOfFlight": "04/07/2021",
-      "seatsAvailable": 84,
+      "seatsAvailable": 81,
       "seatsTotal": 200
     },
     {
@@ -504,7 +522,7 @@
       "airline": "SilkAir",
       "callsign": "SA369",
       "dateOfFlight": "13/08/2021",
-      "seatsAvailable": 69,
+      "seatsAvailable": 60,
       "seatsTotal": 80
     },
     {

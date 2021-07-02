@@ -25,6 +25,8 @@ export class BookingsComponent implements OnInit {
 
   private _failed = new Subject<string>();
   failMessage = '';
+  private _deleted = new Subject<string>();
+  deleteMessage = '';
 
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert!: NgbAlert;
 
@@ -49,7 +51,14 @@ export class BookingsComponent implements OnInit {
 
   ngOnInit(): void {
     this._failed.subscribe((message) => (this.failMessage = message));
-    this._failed.pipe(debounceTime(5000)).subscribe(() => {
+    this._deleted.subscribe((message) => (this.deleteMessage = message));
+    this._failed.pipe(debounceTime(3000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
+
+    this._deleted.pipe(debounceTime(3000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
       }
@@ -71,9 +80,20 @@ export class BookingsComponent implements OnInit {
     this._failed.next(message);
   }
 
+  bookingDeleteMessage(message: string) {
+    this._deleted.next(message);
+  }
   resetFields(): void {
     this.selectedDate = '';
     this.selectedAirline = '';
+  }
+
+  deleteBooking(id: any): any {
+    this.bookingsService.deleteBookingEntry(id).subscribe(() => {
+      this.bookingDeleteMessage('Booking Deleted');
+      this.onSearchSubmit('all');
+    });
+    console.log(id);
   }
 
   onSearchSubmit(selectedAirline: string): void {

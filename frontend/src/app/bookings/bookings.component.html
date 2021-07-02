@@ -52,29 +52,46 @@
       <th scope="col">Customer Name</th>
       <th scope="col">Booking Agent</th>
       <th scope="col">Status</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let booking of bookings; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td>
+      <td id="airline{{ i + 1 }}">
         {{ booking.airline }}
       </td>
-      <td>
+      <td id="callsign{{ i + 1 }}">
         {{ booking.callsign }}
       </td>
-      <td>
+      <td id="dateOfFlight{{ i + 1 }}">
         {{ booking.dateOfFlight }}
       </td>
-      <td>
+      <td id="customerName{{ i + 1 }}">
         {{ booking.customerName }}
       </td>
-      <td>
+      <td id="bookingAgent{{ i + 1 }}">
         {{ booking.bookingAgent }}
       </td>
-      <td>
+      <td id="status{{ i + 1 }}">
         {{ booking.status }}
+      </td>
+      <td id="delete{{ i + 1 }}">
+        <button
+          class="btn btn-danger"
+          id="deleteBooking{{ i + 1 }}"
+          (click)="deleteBooking(booking.id)"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="deleteMessage"
+  type="info"
+  (closed)="deleteMessage = ''"
+  >{{ deleteMessage }}
+</ngb-alert>

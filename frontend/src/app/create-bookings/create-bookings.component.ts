@@ -18,6 +18,7 @@ export class CreateBookingsComponent implements OnInit {
   seatsToReserve!: number;
   selected!: number;
   currentDate: Date = new Date();
+  customerName: string = '';
 
   private _failed = new Subject<string>();
   private _success = new Subject<string>();
@@ -74,7 +75,7 @@ export class CreateBookingsComponent implements OnInit {
     this.bookingsService.getOneFlight(this.selected).subscribe((flights) => {
       this.flights = flights[0];
 
-      if (this.flights) {
+      if (this.flights && this.customerName) {
         if (
           this.seatsToReserve <= this.flights.seatsAvailable &&
           this.seatsToReserve > 0
@@ -89,7 +90,7 @@ export class CreateBookingsComponent implements OnInit {
                 ...rest,
                 bookingAgent:
                   sessionStorage.getItem('currentUser') || 'unknown',
-                customerName: 'No Customer Booked',
+                customerName: this.customerName,
                 status: 'Reserved',
               };
 
