@@ -167,6 +167,38 @@
       "userType": "Individual",
       "status": true,
       "id": 30
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 31
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 32
+    },
+    {
+      "username": "mitchellgkh",
+      "email": "w@2c.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 33
+    },
+    {
+      "username": "bookingagent1",
+      "email": "w@3.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 34
     }
   ],
   "bookings": [
@@ -249,6 +281,126 @@
       "bookingAgent": "g00nd0",
       "status": "Reserved",
       "id": 10
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 11
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 12
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 13
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 14
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 15
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 16
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 17
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 18
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 19
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 20
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "12/06/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 21
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "12/06/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 22
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "12/06/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 23
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "12/06/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 24
+    },
+    {
+      "airline": "SIA",
+      "callsign": "SQ420",
+      "dateOfFlight": "12/06/2021",
+      "bookingAgent": "mitchellgkh",
+      "status": "Reserved",
+      "id": 25
     }
   ],
   "flights": [
@@ -273,7 +425,7 @@
       "airline": "SIA",
       "callsign": "SQ420",
       "dateOfFlight": "12/06/2021",
-      "seatsAvailable": 89,
+      "seatsAvailable": 84,
       "seatsTotal": 200
     },
     {
@@ -305,7 +457,7 @@
       "airline": "Emirates",
       "callsign": "EK069",
       "dateOfFlight": "10/07/2021",
-      "seatsAvailable": 186,
+      "seatsAvailable": 176,
       "seatsTotal": 200
     }
   ],
@@ -321,9 +473,14 @@
       "id": 4
     },
     {
-      "username": "g00nd0",
+      "username": "mitchellgkh",
       "status": true,
       "id": 5
+    },
+    {
+      "username": "bookingagent1",
+      "status": true,
+      "id": 6
     }
   ]
 }

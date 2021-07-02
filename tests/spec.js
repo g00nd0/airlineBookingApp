@@ -1,16 +1,4 @@
 describe("Agent Airline Booking App", function () {
-  var firstNumber = element(by.model("first"));
-  var secondNumber = element(by.model("second"));
-  var goButton = element(by.id("gobutton"));
-  var latestResult = element(by.binding("latest"));
-  var history = element.all(by.repeater("result in memory"));
-
-  function add(a, b) {
-    firstNumber.sendKeys(a);
-    secondNumber.sendKeys(b);
-    goButton.click();
-  }
-
   beforeEach(function () {
     browser.get("http://localhost:4200/");
   });
@@ -28,26 +16,22 @@ describe("Agent Airline Booking App", function () {
         expect(browser.getCurrentUrl()).toEqual(
           "http://localhost:4200/bookings"
         );
-        expect(element(by.xpath('//*[@id="welcome"]')).isPresent()).toBe(true);
-        // expect();
-        // element(by.xpath('//*[@id="welcome"]')).contains("Welcome, g00nd0!")
       });
   });
 
   it("should fail login, with no credentials entered", function () {
     browser.get("http://localhost:4200/login");
-    // browser.sleep(2000);
     element(by.xpath('//*[@id="loginSubmit"]'))
       .click()
       .then(function () {
+        expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          "Crendentials cannot be empty, please enter your username and password."
+        );
         browser
           .switchTo()
           .alert()
           .then(
             function (alert) {
-              expect(element(by.tagName("ngb-alert")).getText()).toContain(
-                "Crendentials cannot be empty, please enter your username and password."
-              );
               alert.dismiss();
             },
             function (err) {}
@@ -63,18 +47,19 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="loginSubmit"]'))
       .click()
       .then(function () {
-        browser
-          .switchTo()
-          .alert()
-          .then(
-            function (alert) {
-              expect(element(by.tagName("ngb-alert")).getText()).toContain(
-                "Crendentials cannot be empty, please enter your username and password."
-              );
-              alert.dismiss();
-            },
-            function (err) {}
-          );
+        expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          "Crendentials cannot be empty, please enter your username and password."
+        );
+        // browser
+        //   .switchTo()
+        //   .alert()
+        //   .then(
+        //     function (alert) {
+
+        //       alert.dismiss();
+        //     },
+        //     function (err) {}
+        //   );
       });
   });
 
@@ -86,18 +71,19 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="loginSubmit"]'))
       .click()
       .then(function () {
-        browser
-          .switchTo()
-          .alert()
-          .then(
-            function (alert) {
-              expect(element(by.tagName("ngb-alert")).getText()).toContain(
-                "Crendentials cannot be empty, please enter your username and password."
-              );
-              alert.dismiss();
-            },
-            function (err) {}
-          );
+        expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          "Crendentials cannot be empty, please enter your username and password."
+        );
+        // browser
+        //   .switchTo()
+        //   .alert()
+        //   .then(
+        //     function (alert) {
+
+        //       alert.dismiss();
+        //     },
+        //     function (err) {}
+        //   );
       });
   });
 
@@ -110,18 +96,19 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="loginSubmit"]'))
       .click()
       .then(function () {
-        browser
-          .switchTo()
-          .alert()
-          .then(
-            function (alert) {
-              expect(element(by.tagName("ngb-alert")).getText()).toContain(
-                "Login Error, user does not exist, please register for a new account."
-              );
-              alert.dismiss();
-            },
-            function (err) {}
-          );
+        expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          "Login Error, user does not exist, please register for a new account."
+        );
+        // browser
+        //   .switchTo()
+        //   .alert()
+        //   .then(
+        //     function (alert) {
+
+        //       alert.dismiss();
+        //     },
+        //     function (err) {}
+        //   );
       });
   });
 
@@ -134,18 +121,19 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="loginSubmit"]'))
       .click()
       .then(function () {
-        browser
-          .switchTo()
-          .alert()
-          .then(
-            function (alert) {
-              expect(element(by.tagName("ngb-alert")).getText()).toContain(
-                "Login error, please check your credentials"
-              );
-              alert.dismiss();
-            },
-            function (err) {}
-          );
+        expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          "Login error, please check your credentials"
+        );
+        // browser
+        //   .switchTo()
+        //   .alert()
+        //   .then(
+        //     function (alert) {
+
+        //       alert.dismiss();
+        //     },
+        //     function (err) {}
+        //   );
       });
   });
 
@@ -153,182 +141,169 @@ describe("Agent Airline Booking App", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("username")).sendKeys("blah123");
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          expect(element(by.tagName("ngb-alert")).getText()).toContain(
-            "Username must be at least 8 characters long and contain no spaces."
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    expect(element(by.tagName("ngb-alert")).getText()).toContain(
+      "Username must be at least 8 characters long and contain no spaces."
+    );
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
+
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should pop up warning when entering password with less than 8 characters", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("password")).sendKeys("lousypw");
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          expect(element(by.tagName("ngb-alert")).getText()).toContain(
-            "Password must be alphanumeric, at least 8 characters long and contain no spaces."
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    expect(element(by.tagName("ngb-alert")).getText()).toContain(
+      "Password must be alphanumeric, at least 8 characters long and contain no spaces."
+    );
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should pop up warning when entering password that is not alphanumeric", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("password")).sendKeys("lousypeeword");
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    expect(element(by.tagName("ngb-alert")).getText()).toContain(
+      "Password must be alphanumeric, at least 8 characters long and contain no spaces."
+    );
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
 
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          expect(element(by.tagName("ngb-alert")).getText()).toContain(
-            "Password must be alphanumeric, at least 8 characters long and contain no spaces."
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should have no pop up warning, submit disabled, when entering alphanumeric password only", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("password")).sendKeys("lousypeeword123");
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
+
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should pop up warning when entering invalid email format", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("email")).sendKeys("myemail@");
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.tagName("ngb-alert")).getText()).toContain(
-            "Not a valid email address"
-          );
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    expect(element(by.tagName("ngb-alert")).getText()).toContain(
+      "Not a valid email address"
+    );
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
+
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should have no pop up warning, submit disabled, when entering valid email format", function () {
     browser.get("http://localhost:4200/register");
 
     element(by.id("email")).sendKeys("myemail@mail.com");
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
 
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should have submit disabled, when any field does not meet their respective requirement", function () {
     browser.get("http://localhost:4200/register");
-    browser
-      .switchTo()
-      .alert()
-      .then(
-        function (alert) {
-          element(by.id("username")).sendKeys("mym");
-          element(by.id("password")).sendKeys("abcd1234");
-          element(by.id("passwordVer")).sendKeys("abcd1234");
-          element(by.id("email")).sendKeys("myemail@mail.com");
-          element(by.tagName("option", "Individual")).click();
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            false
-          );
-          alert.dismiss();
-        },
-        function (err) {}
-      );
+    element(by.id("username")).sendKeys("mym");
+    element(by.id("password")).sendKeys("abcd1234");
+    element(by.id("passwordVer")).sendKeys("abcd1234");
+    element(by.id("email")).sendKeys("myemail@mail.com");
+    element(by.tagName("option", "Individual")).click();
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
+    // browser
+    //   .switchTo()
+    //   .alert()
+    //   .then(
+    //     function (alert) {
+
+    //       alert.dismiss();
+    //     },
+    //     function (err) {}
+    //   );
   });
 
   it("should successfully register", function () {
     browser.get("http://localhost:4200/register");
-
-    browser
-      .switchTo()
-      .alert()
+    element(by.id("username")).sendKeys("abcd1234");
+    element(by.id("password")).sendKeys("abcd1234");
+    element(by.id("passwordVer")).sendKeys("abcd1234");
+    element(by.id("email")).sendKeys("myemail@mail.com");
+    element(by.tagName("option", "Individual")).click();
+    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(true);
+    element(by.xpath('//*[@id="regSubmit"]'))
+      .click()
       .then(
-        function (alert) {
-          element(by.id("username")).sendKeys("abcd1234");
-          element(by.id("password")).sendKeys("abcd1234");
-          element(by.id("passwordVer")).sendKeys("abcd1234");
-          element(by.id("email")).sendKeys("myemail@mail.com");
-          element(by.tagName("option", "Individual")).click();
-          expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-            true
+        function () {
+          // expect(element(by.tagName("ngb-alert")).getText()).toContain(
+          //   "Account Created, redirecting to login page..."
+          // );
+          expect(browser.getCurrentUrl()).toEqual(
+            "http://localhost:4200/login"
           );
-          element(by.xpath('//*[@id="regSubmit"]'))
-            .click()
-            .then(function () {
-              browser
-                .switchTo()
-                .alert()
-                .then(
-                  function (alert) {
-                    expect(
-                      element(by.tagName("ngb-alert")).getText()
-                    ).toContain(
-                      "Account Created, redirecting to login page..."
-                    );
-                    alert.dismiss();
-                    expect(browser.getCurrentUrl()).toEqual(
-                      "http://localhost:4200/login"
-                    );
-                  },
-                  function (err) {}
-                );
-            });
+          // browser
+          //   .switchTo()
+          //   .alert()
+          //   .then(function (alert) {
+          //     // browser
+          //     //   .switchTo()
+          //     //   .alert()
+          //     //   .then(
+          //     //     function (alert) {
+
+          //     //                 alert.dismiss();
+
+          //     //               },
+          //     //               function (err) {}
+          //     //             );
+          //   });
         },
         function (err) {}
       );

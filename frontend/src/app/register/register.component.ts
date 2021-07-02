@@ -102,6 +102,12 @@ export class RegisterComponent implements OnInit {
     } else if (inputId === 'userType') {
       if (!(inputText === 'Individual' || inputText === 'Agent')) {
         failMsg = 'Invalid Option, please select from the dropdown list';
+      } else if (inputText === 'Individual') {
+        failMsg =
+          'Account registration is available for Booking Agents only, please select "Booking Agent"';
+      } else {
+        this.selfClosingAlert.close();
+        failMsg = '';
       }
     }
 
