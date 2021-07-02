@@ -63,6 +63,9 @@ export class RegisterComponent implements OnInit {
       if (inputText.length < 8 || inputText.match(' ')) {
         failMsg =
           'Username must be at least 8 characters long and contain no spaces.';
+      } else {
+        this.selfClosingAlert.close();
+        failMsg = '';
       }
     } else if (inputId === 'password') {
       if (
@@ -74,10 +77,16 @@ export class RegisterComponent implements OnInit {
       ) {
         failMsg =
           'Password must be alphanumeric, at least 8 characters long and contain no spaces.';
+      } else {
+        this.selfClosingAlert.close();
+        failMsg = '';
       }
     } else if (inputId === 'passwordVer') {
       if (inputText !== this.password) {
         failMsg = 'Password does not match';
+      } else {
+        this.selfClosingAlert.close();
+        failMsg = '';
       }
     } else if (inputId === 'email') {
       if (
@@ -86,6 +95,9 @@ export class RegisterComponent implements OnInit {
         )
       ) {
         failMsg = 'Not a valid email address';
+      } else {
+        this.selfClosingAlert.close();
+        failMsg = '';
       }
     } else if (inputId === 'userType') {
       if (!(inputText === 'Individual' || inputText === 'Agent')) {
@@ -95,9 +107,9 @@ export class RegisterComponent implements OnInit {
 
     if (
       failMsg.length > 0 ||
-      !(this.username.length > 7) ||
-      !(this.password.length > 7) ||
-      !this.passwordVer ||
+      this.username.length < 8 ||
+      this.password.length < 8 ||
+      this.passwordVer !== this.password ||
       !this.email ||
       !this.userType
     ) {
@@ -106,6 +118,20 @@ export class RegisterComponent implements OnInit {
     } else {
       this.formValid = true;
     }
+
+    //   if (
+    //     failMsg.length === 0 &&
+    //     this.username.length > 7 &&
+    //     this.password.length > 7 &&
+    //     this.passwordVer === this.password &&
+    //     this.email &&
+    //     this.userType
+    //   ) {
+    //     this.formValid = true;
+    //   } else {
+    //     this.createFailMessage(failMsg);
+    //     this.formValid = false;
+    //   }
   }
 
   onRegisterSubmit() {

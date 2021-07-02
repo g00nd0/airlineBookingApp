@@ -54,6 +54,7 @@ export class BookingsComponent implements OnInit {
         this.selfClosingAlert.close();
       }
     });
+
     this.bookingsService
       .getAllBookingsByAgent(this.sessionService.sessionGet())
       .subscribe((bookings) => (this.bookings = bookings));

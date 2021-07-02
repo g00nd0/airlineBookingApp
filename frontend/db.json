@@ -151,6 +151,22 @@
       "userType": "Individual",
       "status": true,
       "id": 28
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 29
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Individual",
+      "status": true,
+      "id": 30
     }
   ],
   "bookings": [
@@ -305,14 +321,9 @@
       "id": 4
     },
     {
-      "username": "mitchgoon",
-      "status": true,
-      "id": 5
-    },
-    {
       "username": "g00nd0",
       "status": true,
-      "id": 6
+      "id": 5
     }
   ]
 }
