@@ -39,7 +39,7 @@
     (closed)="failMessage = ''"
     >{{ failMessage }}
   </ngb-alert>
-  <button class="btn btn-primary">Show All</button>
+  <button class="btn btn-primary" id="showAll">Show All</button>
 </form>
 
 <table class="table table-striped">
@@ -58,28 +58,28 @@
   <tbody>
     <tr *ngFor="let booking of bookings; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td id="airline{{ i + 1 }}">
+      <td id="airline{{ i }}">
         {{ booking.airline }}
       </td>
-      <td id="callsign{{ i + 1 }}">
+      <td id="callsign{{ i }}">
         {{ booking.callsign }}
       </td>
-      <td id="dateOfFlight{{ i + 1 }}">
+      <td id="dateOfFlight{{ i }}">
         {{ booking.dateOfFlight }}
       </td>
-      <td id="customerName{{ i + 1 }}">
+      <td id="customerName{{ i }}">
         {{ booking.customerName }}
       </td>
-      <td id="bookingAgent{{ i + 1 }}">
+      <td id="bookingAgent{{ i }}">
         {{ booking.bookingAgent }}
       </td>
-      <td id="status{{ i + 1 }}">
+      <td id="status{{ i }}">
         {{ booking.status }}
       </td>
-      <td id="delete{{ i + 1 }}">
+      <td id="delete{{ i }}">
         <button
           class="btn btn-danger"
-          id="deleteBooking{{ i + 1 }}"
+          id="deleteBooking{{ i }}"
           (click)="deleteBooking(booking.id)"
         >
           Delete

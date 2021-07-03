@@ -94,7 +94,28 @@ export class BookingsService {
     );
   }
 
+  // addSeats(id: number) {
+  //   let currentSeats = 0;
+  //   this.http.get<any>(`${this.apiUrl}/flights/${id}`).subscribe((flight) => {
+  //     currentSeats = flight;
+  //   });
+  //   const updateSeats = { seatsAvailable: currentSeats + 1 };
+  //   this.http.patch(`${this.apiUrl}/flights/${id}`, updateSeats, httpOptions);
+  // }
+
+  // deleteBookingEntry(id: number): Observable<any> {
+  //   let currentSeats = 0;
+  //   this.http.get<any>(`${this.apiUrl}/flights/${id}`).subscribe((flight) => {
+  //     currentSeats = flight.seatsAvailable;
+  //   });
+  //   console.log(currentSeats);
+  //   const updateSeats = { seatsAvailable: currentSeats + 1 };
+  //   this.http.patch(`${this.apiUrl}/flights/${id}`, updateSeats, httpOptions);
+  //   return this.http.delete<any>(`${this.apiUrl}/bookings/${id}`);
+  // }
+
   deleteBookingEntry(id: number): Observable<any> {
+    this.http.patch(`${this.apiUrl}/flights/${id}`, 1, httpOptions);
     return this.http.delete<any>(`${this.apiUrl}/bookings/${id}`);
   }
 }
