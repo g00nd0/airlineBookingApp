@@ -50,6 +50,7 @@
       <th scope="col">Airline</th>
       <th scope="col">Callsign</th>
       <th scope="col">Departure Date</th>
+      <th scope="col">Booking ID</th>
       <th scope="col">Customer Name</th>
       <th scope="col">Booking Agent</th>
       <th scope="col">Status</th>
@@ -67,6 +68,9 @@
       </td>
       <td id="dateOfFlight{{ i }}">
         {{ booking.dateOfFlight }}
+      </td>
+      <td id="bookingId{{ i }}">
+        {{ booking.id }}
       </td>
       <td id="customerName{{ i }}">
         {{ booking.customerName }}

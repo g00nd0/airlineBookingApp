@@ -67,7 +67,7 @@
     {
       "username": "g00nd0",
       "email": "m@g.com",
-      "password": "password1234",
+      "password": "abcd1234",
       "userType": "Agent",
       "status": true,
       "id": 18
@@ -239,6 +239,22 @@
       "userType": "Agent",
       "status": true,
       "id": 39
+    },
+    {
+      "username": "yourusername1",
+      "email": "m@p.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 40
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 41
     }
   ],
   "bookings": [
@@ -309,16 +325,6 @@
       "customerName": "g00nd05678",
       "status": "Reserved",
       "id": 8
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 12
     },
     {
       "airline": "Delta",
@@ -469,6 +475,116 @@
       "customerName": "Name of Guy",
       "status": "Confirmed",
       "id": 50
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "flightId": 7,
+      "bookingAgent": "yourusername1",
+      "customerName": "some guy",
+      "status": "Confirmed",
+      "id": 51
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "flightId": 7,
+      "bookingAgent": "yourusername1",
+      "customerName": "some guy",
+      "status": "Confirmed",
+      "id": 52
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "flightId": 7,
+      "bookingAgent": "yourusername1",
+      "customerName": "some guy",
+      "status": "Reserved",
+      "id": 53
+    },
+    {
+      "airline": "Emirates",
+      "callsign": "EK069",
+      "dateOfFlight": "10/07/2021",
+      "flightId": 7,
+      "bookingAgent": "yourusername1",
+      "customerName": "some guy",
+      "status": "Reserved",
+      "id": 55
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 56
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 57
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 58
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 59
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 60
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 61
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 62
     }
   ],
   "flights": [
@@ -525,7 +641,7 @@
       "airline": "Emirates",
       "callsign": "EK069",
       "dateOfFlight": "10/07/2021",
-      "seatsAvailable": 167,
+      "seatsAvailable": 163,
       "seatsTotal": 200
     },
     {
@@ -565,7 +681,7 @@
       "airline": "Delta",
       "callsign": "DL666",
       "dateOfFlight": "14/08/2021",
-      "seatsAvailable": 56,
+      "seatsAvailable": 52,
       "seatsTotal": 100
     }
   ],
@@ -594,6 +710,16 @@
       "username": "lewis666",
       "status": true,
       "id": 8
+    },
+    {
+      "username": "yourusername1",
+      "status": true,
+      "id": 9
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 10
     }
   ]
 }
