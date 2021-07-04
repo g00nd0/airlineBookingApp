@@ -71,6 +71,7 @@ describe("Agent Airline Booking App", function () {
           // expect(element(by.tagName("ngb-alert")).getText()).toContain(
           //   "Account Created, redirecting to login page..."
           // );
+          // test
           expect(browser.getCurrentUrl()).toEqual(
             "http://localhost:4200/login"
           );
