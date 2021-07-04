@@ -67,7 +67,7 @@
     {
       "username": "g00nd0",
       "email": "m@g.com",
-      "password": "abcd1234",
+      "password": "password1234",
       "userType": "Agent",
       "status": true,
       "id": 18
@@ -594,11 +594,6 @@
       "username": "lewis666",
       "status": true,
       "id": 8
-    },
-    {
-      "username": "g00nd0",
-      "status": true,
-      "id": 9
     }
   ]
 }

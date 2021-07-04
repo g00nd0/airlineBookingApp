@@ -63,4 +63,12 @@ export class UserService {
   emitUserLogin(username: String) {
     this.getCurrentUser.emit(username);
   }
+
+  resetPw(user: User, password: string): any {
+    return this.http.put<any>(
+      `${this.apiUrl}/${user.id}`,
+      { ...user, password: password },
+      httpOptions
+    );
+  }
 }

@@ -1,12 +1,5 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from '../models/users';
 import { Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
@@ -19,7 +12,6 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  title: String = 'Login';
   username!: string;
   password!: string;
 
@@ -52,6 +44,10 @@ export class LoginComponent implements OnInit {
 
   loginSuccessMessage(message: string) {
     this._success.next(message);
+  }
+
+  goToPwReset() {
+    this.router.navigate(['/pw-reset']);
   }
 
   onLoginSubmit() {
