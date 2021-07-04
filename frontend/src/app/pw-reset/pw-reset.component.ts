@@ -44,39 +44,45 @@ export class PwResetComponent implements OnInit {
   }
 
   onResetSubmit() {
-    if (
-      this.password.length < 8 ||
-      this.password.match(' ') ||
-      !this.password.match(
-        /^([0-9 A-Z]*[A-Z][0-9 A-Z]*[0-9][0-9 A-Z]*|[0-9 A-Z]*[0-9][0-9 A-Z]*[A-Z][0-9 A-Z]*)$/i
-      )
-    ) {
+    if (!this.username || !this.password || !this.passwordConfirm) {
       this.resetFailMessage(
-        'Password must be alphanumeric, at least 8 characters long and contain no spaces.'
+        'Fields cannot be empty, make sure that the fields are filled in.'
       );
     } else {
-      if (this.password === this.passwordConfirm) {
-        this.userService.getOneUser(this.username).subscribe((user) => {
-          if (user[0]) {
-            this.userService
-              .resetPw(user[0] || 0, this.password)
-              .subscribe(() => {
-                console.log('reset success');
-                this.resetSuccessMessage(
-                  'Password reset successful, redirecting to Login page...'
-                );
-                setTimeout(() => {
-                  this.router.navigate(['/login']);
-                }, 2000);
-              });
-          } else {
-            this.resetFailMessage(
-              'User does not exist, please register for a new account.'
-            );
-          }
-        });
+      if (
+        this.password.length < 8 ||
+        this.password.match(' ') ||
+        !this.password.match(
+          /^([0-9 A-Z]*[A-Z][0-9 A-Z]*[0-9][0-9 A-Z]*|[0-9 A-Z]*[0-9][0-9 A-Z]*[A-Z][0-9 A-Z]*)$/i
+        )
+      ) {
+        this.resetFailMessage(
+          'Password must be alphanumeric, at least 8 characters long and contain no spaces.'
+        );
       } else {
-        this.resetFailMessage('Your passwords do not match.');
+        if (this.password === this.passwordConfirm) {
+          this.userService.getOneUser(this.username).subscribe((user) => {
+            if (user[0]) {
+              this.userService
+                .resetPw(user[0] || 0, this.password)
+                .subscribe(() => {
+                  console.log('reset success');
+                  this.resetSuccessMessage(
+                    'Password reset successful, redirecting to Login page...'
+                  );
+                  setTimeout(() => {
+                    this.router.navigate(['/login']);
+                  }, 2000);
+                });
+            } else {
+              this.resetFailMessage(
+                'User does not exist, please register for a new account.'
+              );
+            }
+          });
+        } else {
+          this.resetFailMessage('Your passwords do not match.');
+        }
       }
     }
   }

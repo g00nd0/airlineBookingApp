@@ -87,7 +87,7 @@
             class="btn btn-success"
             id="confirmBooking{{ i }}"
             (click)="confirmBooking(booking.id)"
-            [disabled]="booking.status === 'Confirmed'"
+            [hidden]="booking.status === 'Confirmed'"
           >
             Confirm
           </button></span
