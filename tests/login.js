@@ -105,8 +105,7 @@ describe("Agent Airline Booking App", function () {
     element(by.id("password")).sendKeys("abcd1234");
 
     element(by.xpath('//*[@id="loginSubmit"]')).click();
-    element(by.tagName("button")).click();
-    browser.sleep(1000);
+    browser.waitForAngular();
     element(by.xpath('//*[@id="logout"]'))
       .click()
       .then(function () {
