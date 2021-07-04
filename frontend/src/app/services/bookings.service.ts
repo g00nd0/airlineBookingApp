@@ -114,4 +114,18 @@ export class BookingsService {
     });
     return this.http.delete<any>(`${this.apiUrl}/bookings/${id}`);
   }
+
+  confirmBooking(id: number): Observable<any> {
+    this.getOneBooking(id).subscribe((bookings) => {
+      let booking = bookings[0];
+      return this.http
+        .put<any>(
+          `${this.apiUrl}/bookings/${id}`,
+          { ...booking, status: 'Confirmed' },
+          httpOptions
+        )
+        .subscribe(() => {});
+    });
+    return this.http.get<any>(`${this.apiUrl}/bookings/${id}`);
+  }
 }
