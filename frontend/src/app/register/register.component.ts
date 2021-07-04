@@ -105,7 +105,7 @@ export class RegisterComponent implements OnInit {
       } else if (inputText === 'Individual') {
         failMsg =
           'Account registration is available for Booking Agents only, please select "Booking Agent"';
-      } else {
+      } else if (inputText === 'Individual') {
         this.selfClosingAlert.close();
         failMsg = '';
       }
@@ -117,27 +117,13 @@ export class RegisterComponent implements OnInit {
       this.password.length < 8 ||
       this.passwordVer !== this.password ||
       !this.email ||
-      !this.userType
+      !(this.userType === 'Agent')
     ) {
       this.createFailMessage(failMsg);
       this.formValid = false;
     } else {
       this.formValid = true;
     }
-
-    //   if (
-    //     failMsg.length === 0 &&
-    //     this.username.length > 7 &&
-    //     this.password.length > 7 &&
-    //     this.passwordVer === this.password &&
-    //     this.email &&
-    //     this.userType
-    //   ) {
-    //     this.formValid = true;
-    //   } else {
-    //     this.createFailMessage(failMsg);
-    //     this.formValid = false;
-    //   }
   }
 
   onRegisterSubmit() {
