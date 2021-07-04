@@ -88,6 +88,7 @@ export class CreateBookingsComponent implements OnInit {
 
               const oneBookingEntry: Bookings = {
                 ...rest,
+                flightId: this.flights.id,
                 bookingAgent:
                   sessionStorage.getItem('currentUser') || 'unknown',
                 customerName: this.customerName,

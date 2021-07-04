@@ -28,10 +28,8 @@ export class BookingsService {
     );
   }
 
-  getOneBooking(flightId: String): Observable<Bookings[]> {
-    return this.http.get<Bookings[]>(
-      `${this.apiUrl}/bookings?flightId=${flightId}`
-    );
+  getOneBooking(bookingId: number): Observable<Bookings[]> {
+    return this.http.get<Bookings[]>(`${this.apiUrl}/bookings?id=${bookingId}`);
   }
 
   getAllFlights(): Observable<Flights[]> {
@@ -94,28 +92,26 @@ export class BookingsService {
     );
   }
 
-  // addSeats(id: number) {
-  //   let currentSeats = 0;
-  //   this.http.get<any>(`${this.apiUrl}/flights/${id}`).subscribe((flight) => {
-  //     currentSeats = flight;
-  //   });
-  //   const updateSeats = { seatsAvailable: currentSeats + 1 };
-  //   this.http.patch(`${this.apiUrl}/flights/${id}`, updateSeats, httpOptions);
-  // }
-
-  // deleteBookingEntry(id: number): Observable<any> {
-  //   let currentSeats = 0;
-  //   this.http.get<any>(`${this.apiUrl}/flights/${id}`).subscribe((flight) => {
-  //     currentSeats = flight.seatsAvailable;
-  //   });
-  //   console.log(currentSeats);
-  //   const updateSeats = { seatsAvailable: currentSeats + 1 };
-  //   this.http.patch(`${this.apiUrl}/flights/${id}`, updateSeats, httpOptions);
-  //   return this.http.delete<any>(`${this.apiUrl}/bookings/${id}`);
-  // }
+  addFlightSeat(flightId: number): any {
+    this.http
+      .get<any>(`${this.apiUrl}/flights/${flightId}`)
+      .subscribe((flight) => {
+        this.http
+          .put<any>(
+            `${this.apiUrl}/flights/${flightId}`,
+            { ...flight, seatsAvailable: flight.seatsAvailable + 1 },
+            httpOptions
+          )
+          .subscribe((flight) => {});
+      });
+  }
 
   deleteBookingEntry(id: number): Observable<any> {
-    this.http.patch(`${this.apiUrl}/flights/${id}`, 1, httpOptions);
+    // this.http.patch(`${this.apiUrl}/flights/${id}`, 1, httpOptions);
+    this.getOneBooking(id).subscribe((bookings) => {
+      let flightId = bookings[0].flightId || 0;
+      this.addFlightSeat(flightId).subscribe(() => {});
+    });
     return this.http.delete<any>(`${this.apiUrl}/bookings/${id}`);
   }
 }

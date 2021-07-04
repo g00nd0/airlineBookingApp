@@ -796,15 +796,6 @@
       "airline": "Delta",
       "callsign": "DL666",
       "dateOfFlight": "14/08/2021",
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 72
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
       "bookingAgent": "mlgkh666",
       "customerName": "I Am Customer",
       "status": "Reserved",
@@ -1043,6 +1034,16 @@
       "customerName": "Some Guy 1",
       "status": "Reserved",
       "id": 99
+    },
+    {
+      "airline": "Quantas",
+      "callsign": "QA123",
+      "dateOfFlight": "07/07/2021",
+      "flightId": 6,
+      "bookingAgent": "g00nd0",
+      "customerName": "qweqwe",
+      "status": "Reserved",
+      "id": 100
     }
   ],
   "flights": [
@@ -1091,7 +1092,7 @@
       "airline": "Quantas",
       "callsign": "QA123",
       "dateOfFlight": "07/07/2021",
-      "seatsAvailable": 31,
+      "seatsAvailable": 30,
       "seatsTotal": 200
     },
     {
