@@ -4,6 +4,12 @@ Assignment for Airline Booking App
 
 ## Video Demo Link
 
+## Setup Instructions
+
+1. Clone this repo to your local machine and navigate to the root folder of this project
+2. In your terminal, type npm install to install all dependencies for the application
+3.
+
 ## Functionalities
 
 - Implemented

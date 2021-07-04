@@ -112,7 +112,12 @@ export class BookingsComponent implements OnInit {
   confirmBooking(id: any): any {
     this.bookingsService.confirmBooking(id).subscribe(() => {
       this.bookingConfirmedMessage('Booking Confirmed');
-      this.onSearchSubmit('all');
+      this.bookingsService
+        .getAllBookingsByAgent(this.sessionService.sessionGet())
+        .subscribe((bookings) => {
+          this.bookings = bookings;
+          this.resetFields();
+        });
     });
     console.log('confirmed');
   }
@@ -124,6 +129,7 @@ export class BookingsComponent implements OnInit {
         .subscribe((bookings) => {
           this.bookings = bookings;
           this.resetFields();
+          this.bookingConfirmedMessage('Filters have been reset.');
         });
     } else {
       if (this.selectedDate && selectedAirline) {
