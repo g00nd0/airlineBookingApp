@@ -71,6 +71,38 @@
       "userType": "Agent",
       "status": true,
       "id": 18
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 19
+    },
+    {
+      "username": "newuser1234",
+      "email": "somemail@mail.com",
+      "password": "simple1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 20
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 21
+    },
+    {
+      "username": "newuser1234",
+      "email": "somemail@mail.com",
+      "password": "password1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 22
     }
   ],
   "bookings": [
@@ -140,26 +172,6 @@
       "flightId": 12,
       "bookingAgent": "g00nd0",
       "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 39
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Confirmed",
-      "id": 40
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
       "status": "Confirmed",
       "id": 41
     },
@@ -182,6 +194,206 @@
       "customerName": "Name of Guy",
       "status": "Confirmed",
       "id": 49
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 50
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 51
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 52
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 53
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 54
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 55
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 56
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "newuser1234",
+      "customerName": "Some Fellow",
+      "status": "Reserved",
+      "id": 57
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "newuser1234",
+      "customerName": "Some Fellow",
+      "status": "Reserved",
+      "id": 58
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "flightId": 11,
+      "bookingAgent": "newuser1234",
+      "customerName": "Guy McPerson",
+      "status": "Confirmed",
+      "id": 60
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "flightId": 11,
+      "bookingAgent": "newuser1234",
+      "customerName": "Guy McPerson",
+      "status": "Reserved",
+      "id": 61
+    },
+    {
+      "airline": "SilkAir",
+      "callsign": "SA369",
+      "dateOfFlight": "13/08/2021",
+      "flightId": 11,
+      "bookingAgent": "newuser1234",
+      "customerName": "Guy McPerson",
+      "status": "Reserved",
+      "id": 62
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 63
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 64
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 65
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 66
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "g00nd0",
+      "customerName": "Name of Guy",
+      "status": "Reserved",
+      "id": 67
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "newuser1234",
+      "customerName": "Some Fellow",
+      "status": "Reserved",
+      "id": 68
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "newuser1234",
+      "customerName": "Some Fellow",
+      "status": "Reserved",
+      "id": 69
+    },
+    {
+      "airline": "Delta",
+      "callsign": "DL666",
+      "dateOfFlight": "14/08/2021",
+      "flightId": 12,
+      "bookingAgent": "newuser1234",
+      "customerName": "Some Fellow",
+      "status": "Reserved",
+      "id": 70
     }
   ],
   "flights": [
@@ -270,7 +482,7 @@
       "airline": "SilkAir",
       "callsign": "SA369",
       "dateOfFlight": "13/08/2021",
-      "seatsAvailable": 54,
+      "seatsAvailable": 51,
       "seatsTotal": 80
     },
     {
@@ -278,7 +490,7 @@
       "airline": "Delta",
       "callsign": "DL666",
       "dateOfFlight": "14/08/2021",
-      "seatsAvailable": 95,
+      "seatsAvailable": 82,
       "seatsTotal": 100
     }
   ],
@@ -314,7 +526,7 @@
       "id": 9
     },
     {
-      "username": "g00nd0",
+      "username": "newuser1234",
       "status": true,
       "id": 10
     }

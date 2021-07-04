@@ -4,11 +4,21 @@ Assignment for Airline Booking App
 
 ## Video Demo Link
 
-## Setup Instructions
+## Setup Instructions (Angular App)
 
 1. Clone this repo to your local machine and navigate to the root folder of this project
-2. In your terminal, type npm install to install all dependencies for the application
-3.
+2. cd into frontend npm install to install angular dependencies
+3. npm run server
+4. ng serve -o in a separate window
+
+## Setup Instructions (Protractor Tests)
+
+1. In a new terminal window, navigate to the root of this project
+2. type npm install to install protractor dependencies
+3. cd into tests folder
+4. webdriver-manager update
+5. webdriver-manager start
+6. In a new terminal window, protractor conf.js, to run full test suite
 
 ## Functionalities
 
@@ -18,6 +28,8 @@ Assignment for Airline Booking App
 - Not Implemented
   1. No blah
   2. no blah blah
+
+## Challenges
 
 ## Tech Stack & Justification:
 

@@ -39,7 +39,7 @@ describe("Agent Airline Booking App", function () {
 
     expect(element(by.id("airline0")).isPresent()).toBe(true);
     expect(element(by.id("airline0")).getText()).toBe("SilkAir");
-    expect(element(by.id("dateOfFlight0")).getText()).toBe("13/08/2021");
+    expect(element(by.id("dateOfFlight0")).getText()).toBe("10/06/2021");
   });
 
   it("should show all flights when show all is clicked ", function () {
@@ -52,21 +52,6 @@ describe("Agent Airline Booking App", function () {
         );
       });
   });
-
-  // it("should show all flights when show all is clicked ", function () {
-  //   browser.waitForAngular();
-  //   expect(browser.getCurrentUrl()).toContain("/bookings");
-  //   element(by.id("dateOfFlightSelect")).sendKeys("10/06/2021");
-  //   element(by.tagName("select")).click();
-  //   browser.sleep(1000);
-  //   element(by.cssContainingText("option", "SilkAir"))
-  //     .click()
-  //     .then(function () {
-  //       browser.waitForAngular();
-
-  //       element(by.id("showAll")).click();
-  //     });
-  // });
 
   it("should show all flights for a selected date", function () {
     browser.waitForAngular();
