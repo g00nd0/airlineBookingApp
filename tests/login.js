@@ -126,6 +126,8 @@ describe("Agent Airline Booking App", function () {
       .click()
       .then(function () {
         browser.sleep(2000);
+        browser.waitForAngular();
+        expect(browser.getCurrentUrl()).toEqual("http://localhost:4200/login");
       });
   });
 
