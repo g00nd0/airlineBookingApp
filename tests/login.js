@@ -56,20 +56,6 @@ describe("Agent Airline Booking App", function () {
       });
   });
 
-  it("should fail login, with only password entered", function () {
-    browser.get("http://localhost:4200/login");
-
-    element(by.id("password")).sendKeys("oajroiuh23riouh2");
-
-    element(by.xpath('//*[@id="loginSubmit"]'))
-      .click()
-      .then(function () {
-        expect(element(by.tagName("ngb-alert")).getText()).toContain(
-          "Crendentials cannot be empty, please enter your username and password."
-        );
-      });
-  });
-
   it("should fail login, when entering non-existent username", function () {
     browser.get("http://localhost:4200/login");
 
@@ -209,7 +195,7 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="resetSubmit"]'))
       .click()
       .then(function () {
-        browser.sleep(2000);
+        browser.sleep(1000);
         expect(element(by.tagName("ngb-alert")).getText()).toContain(
           "Password must be alphanumeric, at least 8 characters long and contain no spaces."
         );
@@ -227,7 +213,7 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="resetSubmit"]'))
       .click()
       .then(function () {
-        browser.sleep(2000);
+        browser.sleep(1000);
         expect(element(by.tagName("ngb-alert")).getText()).toContain(
           "Password must be alphanumeric, at least 8 characters long and contain no spaces."
         );
@@ -245,7 +231,7 @@ describe("Agent Airline Booking App", function () {
     element(by.xpath('//*[@id="resetSubmit"]'))
       .click()
       .then(function () {
-        browser.sleep(2000);
+        browser.sleep(1000);
         expect(element(by.tagName("ngb-alert")).getText()).toContain(
           "Password must be alphanumeric, at least 8 characters long and contain no spaces."
         );
