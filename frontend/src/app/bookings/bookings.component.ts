@@ -124,6 +124,7 @@ export class BookingsComponent implements OnInit {
   confirmBooking(id: any): any {
     this.bookingsService.confirmBooking(id).subscribe(() => {
       this.bookingConfirmedMessage('Booking Confirmed');
+      // this.resetFields();
       this.bookingsService
         .getAllBookingsByAgent(this.sessionService.sessionGet())
         .subscribe((bookings) => {
