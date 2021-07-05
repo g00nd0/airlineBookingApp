@@ -1,4 +1,4 @@
-# airlineBookingApp
+# Agent Airline Booking App
 
 Assignment for Airline Booking App
 
