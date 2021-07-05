@@ -111,7 +111,12 @@ export class BookingsComponent implements OnInit {
   deleteBooking(id: any): any {
     this.bookingsService.deleteBookingEntry(id).subscribe(() => {
       this.bookingDeleteMessage('Booking Deleted');
-      this.onSearchSubmit('all');
+      this.bookingsService
+        .getAllBookingsByAgent(this.sessionService.sessionGet())
+        .subscribe((bookings) => {
+          this.bookings = bookings;
+          this.resetFields();
+        });
     });
     console.log('deleted');
   }

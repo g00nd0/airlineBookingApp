@@ -20,6 +20,7 @@ export class EditBookingComponent implements OnInit {
   bookingId!: number;
   customerName!: String;
   bookingInfo!: Bookings;
+  formValid: boolean = true;
 
   private _failed = new Subject<string>();
   failMessage = '';
@@ -62,6 +63,13 @@ export class EditBookingComponent implements OnInit {
 
   customerNameCheck(nameInput: String) {
     // validation check for name/username, cannot be blank
+    if (nameInput === '') {
+      this.editFailMessage('Customer name cannot be blank.');
+      this.formValid = false;
+    } else {
+      this.selfClosingAlert.close();
+      this.formValid = true;
+    }
   }
 
   editFailMessage(message: string) {
