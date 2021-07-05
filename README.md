@@ -7,18 +7,18 @@ Assignment for Airline Booking App
 ## Setup Instructions (Angular App)
 
 1. Clone this repo to your local machine and navigate to the root folder of this project
-2. cd into frontend npm install to install angular dependencies
-3. npm run server
-4. ng serve -o in a separate window
+2. In a terminal window, type `cd frontend` and hit enter to get into the angular application's folder, then `npm install` to install angular dependencies
+3. Type `npm run server` and hit enter. This starts up the JSON-server required for the mock API/backend.
+4. run in a separate terminal window, `ng serve -o`. This builds the application and opens a browser with the application loaded automatically.
 
 ## Setup Instructions (Protractor E2E Tests)
 
 1. In a new terminal window, navigate to the root of this project
-2. type npm install to install protractor dependencies
-3. cd into tests folder
-4. webdriver-manager update
-5. webdriver-manager start
-6. In a new terminal window, protractor conf.js, to run full test suite
+2. In a new terminal window, type `npm install` and hit enter to install protractor dependencies
+3. Get into the "tests" folder by typing `cd tests` , then hitting enter
+4. type `webdriver-manager update` and hit enter to ensure updates are performed
+5. then `webdriver-manager start` to start the selenium server
+6. In a new terminal window, type and run `protractor conf.js`, to run full test suite
 
 ## Functionalities
 
