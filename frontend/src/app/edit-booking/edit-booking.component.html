@@ -15,13 +15,15 @@
   </div>
   <div id="bookingData">
     <h3>Current Booking Info</h3>
-    <p>Booking ID: {{ bookingInfo.id }}</p>
-    <p>Airline: {{ bookingInfo.airline }}</p>
-    <p>Callsign: {{ bookingInfo.callsign }}</p>
-    <p>Departure Date: {{ bookingInfo.dateOfFlight }}</p>
-    <p>Customer Name: {{ bookingInfo.customerName }}</p>
-    <p>Booking Agent: {{ bookingInfo.bookingAgent }}</p>
-    <p>Status: {{ bookingInfo.status }}</p>
+    <p id="bookingInfoId">Booking ID: {{ bookingInfo.id }}</p>
+    <p id="bookingInfoAirline">Airline: {{ bookingInfo.airline }}</p>
+    <p id="bookingInfoCallsign">Callsign: {{ bookingInfo.callsign }}</p>
+    <p id="bookingInfoDate">Departure Date: {{ bookingInfo.dateOfFlight }}</p>
+    <p id="bookingInfoCustomer">
+      Customer Name: {{ bookingInfo.customerName }}
+    </p>
+    <p id="bookingInfoAgent">Booking Agent: {{ bookingInfo.bookingAgent }}</p>
+    <p id="bookingInfoStatus">Status: {{ bookingInfo.status }}</p>
   </div>
 
   <button class="btn btn-primary" [disabled]="!formValid" id="editSubmit">
