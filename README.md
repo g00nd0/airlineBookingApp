@@ -4,6 +4,9 @@ Assignment for Airline Booking App
 
 ## Video Demo Link
 
+1. [Angular Application Walkthrough](https://youtu.be/gK-AQXZo6nQ)
+2. [E2E Testing with Protractor](https://youtu.be/JeDYzdV0fRM)
+
 ## Setup Instructions (Angular App)
 
 1. Clone this repo to your local machine and navigate to the root folder of this project
