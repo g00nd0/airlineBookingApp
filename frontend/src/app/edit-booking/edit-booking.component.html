@@ -1,0 +1,44 @@
+<h2>Edit Booking</h2>
+
+<form (ngSubmit)="onEditSubmit(bookingId, customerName)">
+  <!-- <form> -->
+  <div class="form-group">
+    <label for="customerName">Customer Name</label>
+    <input
+      id="customerName"
+      type="text"
+      [(ngModel)]="customerName"
+      name="customerName"
+      class="form-control"
+      (ngModelChange)="customerNameCheck(customerName)"
+    />
+  </div>
+  <div id="bookingData">
+    <h3>Current Booking Info</h3>
+    <p>Booking ID: {{ bookingInfo.id }}</p>
+    <p>Airline: {{ bookingInfo.airline }}</p>
+    <p>Callsign: {{ bookingInfo.callsign }}</p>
+    <p>Departure Date: {{ bookingInfo.dateOfFlight }}</p>
+    <p>Customer Name: {{ bookingInfo.customerName }}</p>
+    <p>Booking Agent: {{ bookingInfo.bookingAgent }}</p>
+    <p>Status: {{ bookingInfo.status }}</p>
+  </div>
+
+  <button class="btn btn-primary" id="editSubmit">Submit</button>
+</form>
+
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="failMessage"
+  type="danger"
+  (closed)="failMessage = ''"
+  >{{ failMessage }}
+</ngb-alert>
+
+<ngb-alert
+  #selfClosingAlert
+  *ngIf="editedMessage"
+  type="success"
+  (closed)="editedMessage = ''"
+  >{{ editedMessage }}
+</ngb-alert>

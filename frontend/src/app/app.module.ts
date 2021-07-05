@@ -21,11 +21,13 @@ import { BookingsService } from './services/bookings.service';
 import { SessionService } from './services/session.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PwResetComponent } from './pw-reset/pw-reset.component';
+import { EditBookingComponent } from './edit-booking/edit-booking.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'edit', component: EditBookingComponent },
   { path: 'pw-reset', component: PwResetComponent },
   { path: 'bookings', component: BookingsComponent },
   { path: 'create-bookings', component: CreateBookingsComponent },
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     CreateBookingsComponent,
     RegisterComponent,
     PwResetComponent,
+    EditBookingComponent,
   ],
   imports: [
     BrowserModule,

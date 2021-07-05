@@ -119,6 +119,30 @@
       "userType": "Agent",
       "status": true,
       "id": 24
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 25
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 26
+    },
+    {
+      "username": "abcd1234",
+      "email": "myemail@mail.com",
+      "password": "abcd1234",
+      "userType": "Agent",
+      "status": true,
+      "id": 27
     }
   ],
   "bookings": [
@@ -152,7 +176,7 @@
       "callsign": "SA369",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
-      "customerName": "someuser001",
+      "customerName": "Paul Tan",
       "status": "Reserved"
     },
     {
@@ -161,7 +185,7 @@
       "callsign": "SA369",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
-      "customerName": "someuser001",
+      "customerName": "Cameron McNab",
       "status": "Confirmed"
     },
     {
@@ -170,7 +194,7 @@
       "callsign": "DL666",
       "dateOfFlight": "10/06/2021",
       "bookingAgent": "g00nd0",
-      "customerName": "grimreaper666",
+      "customerName": "Grim Sabel",
       "status": "Reserved"
     },
     {
@@ -187,37 +211,7 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 50
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 51
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 52
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 53
     },
@@ -227,7 +221,7 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 54
     },
@@ -237,7 +231,7 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 55
     },
@@ -247,7 +241,7 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 56
     },
@@ -307,7 +301,7 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 63
     },
@@ -317,39 +311,9 @@
       "dateOfFlight": "14/08/2021",
       "flightId": 12,
       "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
+      "customerName": "Guy Patterson",
       "status": "Reserved",
       "id": 64
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 65
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 66
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 67
     },
     {
       "airline": "Delta",
@@ -380,176 +344,6 @@
       "customerName": "Some Fellow",
       "status": "Reserved",
       "id": 70
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 71
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 72
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 73
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 74
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 75
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 76
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 77
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 78
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 79
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 80
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 81
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 82
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 83
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 84
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 85
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 86
-    },
-    {
-      "airline": "Delta",
-      "callsign": "DL666",
-      "dateOfFlight": "14/08/2021",
-      "flightId": 12,
-      "bookingAgent": "g00nd0",
-      "customerName": "Name of Guy",
-      "status": "Reserved",
-      "id": 87
     }
   ],
   "flights": [
@@ -646,7 +440,7 @@
       "airline": "Delta",
       "callsign": "DL666",
       "dateOfFlight": "14/08/2021",
-      "seatsAvailable": 70,
+      "seatsAvailable": 92,
       "seatsTotal": 100
     }
   ],
@@ -685,6 +479,11 @@
       "username": "newuser1234",
       "status": true,
       "id": 10
+    },
+    {
+      "username": "g00nd0",
+      "status": true,
+      "id": 11
     }
   ]
 }

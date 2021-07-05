@@ -84,6 +84,15 @@
       <td id="actions{{ i }}">
         <span
           ><button
+            class="btn btn-primary"
+            id="editBooking{{ i }}"
+            (click)="goToEditPage(booking.id || 0)"
+          >
+            Edit
+          </button></span
+        >
+        <span
+          ><button
             class="btn btn-success"
             id="confirmBooking{{ i }}"
             (click)="confirmBooking(booking.id)"

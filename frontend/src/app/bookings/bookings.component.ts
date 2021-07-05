@@ -9,6 +9,7 @@ import { SessionService } from '../services/session.service';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-bookings',
@@ -22,6 +23,7 @@ export class BookingsComponent implements OnInit {
   agents: User[] = [];
   selectedAirline!: string;
   selectedDate!: string;
+  selectedBookingId!: number;
 
   private _failed = new Subject<string>();
   failMessage = '';
@@ -35,7 +37,9 @@ export class BookingsComponent implements OnInit {
   constructor(
     private bookingsService: BookingsService,
     private userService: UserService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   formatDate(date: string): String {
@@ -52,6 +56,9 @@ export class BookingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.selectedBookingId = params['bookingId'];
+    });
     this._failed.subscribe((message) => (this.failMessage = message));
     this._deleted.subscribe((message) => (this.deleteMessage = message));
     this._confirmed.subscribe((message) => (this.confirmMessage = message));
@@ -120,6 +127,11 @@ export class BookingsComponent implements OnInit {
         });
     });
     console.log('confirmed');
+  }
+
+  goToEditPage(id: number) {
+    sessionStorage.setItem('selectedBookingId', id.toString());
+    this.router.navigate([`/edit`]);
   }
 
   onSearchSubmit(selectedAirline: string): void {

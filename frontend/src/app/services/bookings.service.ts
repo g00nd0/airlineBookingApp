@@ -128,4 +128,20 @@ export class BookingsService {
     });
     return this.http.get<any>(`${this.apiUrl}/bookings/${id}`);
   }
+
+  // editBookingId =
+
+  editBooking(id: number, customerName: String): Observable<any> {
+    this.getOneBooking(id).subscribe((bookings) => {
+      let booking = bookings[0];
+      return this.http
+        .put<any>(
+          `${this.apiUrl}/bookings/${id}`,
+          { ...booking, customerName: customerName },
+          httpOptions
+        )
+        .subscribe(() => {});
+    });
+    return this.http.get<any>(`${this.apiUrl}/bookings/${id}`);
+  }
 }
