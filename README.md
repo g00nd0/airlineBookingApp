@@ -23,6 +23,56 @@ Assignment for Airline Booking App
 5. then `webdriver-manager start` to start the selenium server
 6. In a new terminal window, type and run `protractor conf.js`, to run full test suite
 
+## Setup Instructions (Optional, For WSL users)
+
+The following steps are specific to users attempting to run this in the Windows Subsystem for Linux (WSL) environment, namely WSL2, which was what this project was developed in.
+Since the host OS (Windows 10) and WSL2 are essentially in separate environments (WSL2 has its own virtualized ethernet adapter, and therefore a unique IP address from the host machine), Selenium Webdriver running in WSL2 will not be able to locate the browser binaries in the host OS; it only attempts to look for it in its own environment.
+While it is possible to specify the location of the binaries/exe files on the hostmachine (Windows' `C:/` drive is mounted in WSL under /`mnt/c/`), several issues tend to occur, namely the browser (Google Chrome in this case) opening a blank window or error popups indicating issues with access permissions.
+
+Ultimately, the intention here is to explore the option of running everyting within the WSL environment.
+The following steps were based on [this tutorial](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/). You can refer to this if you need a more detailed step-by-step guide.
+
+### In WSL:
+
+1. Install Chrome and required dependencies
+
+```bash
+sudo apt-get update
+sudo apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+```
+
+2. Install ChromeDriver
+   \*Note: the URL specified below is for illustration only and may not be the latest version. Check [this link](https://chromedriver.chromium.org/) for the latest version.
+
+```
+wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin/chromedriver
+sudo chown root:root /usr/bin/chromedriver
+sudo chmod +x /usr/bin/chromedriver
+```
+
+### In Host OS (Win10):
+
+1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+   VcXsrv essentially allows WSL to run Linux GUI applications, displaying and allowing for interaction in the Windows environment.
+2. Run XLaunch in Windows. You can leave the settings at its default, but make sure that the option “Disable access control” is checked.
+3. When prompted, select allow in the Windows Firewall prompt.
+4. Open the CMD propmt and type `ipconfig`, then enter. Make a note of your Windows machine's IP address, you'll need that for the sectio n below.
+
+### Back in WSL:
+
+1. You will need to set the $DISPLAY environment variable to allow GUI applications to connect to VcXsrv in Windows. This can be added in the `.bashrc` located in the home folder (i.e. `/home/yourUserName/`)
+2. In the Terminal, type `cd` and enter to make sure you're in your logged in user's home folder.
+3. Type `nano .bashrc` and hit enter.
+4. In scroll to the bottom of the file and type the following in a new line: (Replace `YOUR_WIN10_IP` with the IP address you noted in the previous section)
+   `export DISPLAY=YOUR_WIN10_IP:0.0`
+5. Hit **_Ctrl + X_**, then **_Y_** and **_ENTER_** to exit the Nano editor, and save your changes.
+6. You may need to reload the terminal in order for the changes to take effect. You can do this by running `. ~/.bashrc` in the terminal
+7. To test if the changes are successful, in the terminal, type and run `google-chrome`. This should open a new Chrome window in Windows, but is running from WSL.
+
 ## Functionalities
 
 - Implemented
