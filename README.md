@@ -29,7 +29,7 @@ The following steps are specific to users attempting to run this in the Windows 
 
 Since the host OS (Windows 10) and WSL2 are essentially in separate environments (WSL2 has its own virtualized ethernet adapter, and therefore a unique IP address from the host machine), Selenium Webdriver running in WSL2 will not be able to locate the browser binaries in the host OS; it only attempts to look for it in its own environment.
 
-While it is possible to specify the location of the binaries/exe files on the hostmachine (Windows' `C:/` drive is mounted in WSL under /`mnt/c/`), several issues tend to occur, namely the browser (Google Chrome in this case) opening a blank window or error popups indicating issues with access permissions.
+While it is possible to specify the location of the binaries/exe files on the hostmachine (Windows' `C:/` drive is mounted in WSL under `/mnt/c/`), several issues tend to occur, namely the browser (Google Chrome in this case) opening a blank window or error popups indicating issues with access permissions.
 
 Ultimately, the intention here is to explore the option of running everyting within the WSL environment.
 The following steps were based on [this tutorial](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/). You can refer to this if you need a more detailed step-by-step guide.
@@ -58,7 +58,7 @@ sudo chmod +x /usr/bin/chromedriver
 
 ### In Host OS (Win10):
 
-1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/).
    VcXsrv essentially allows WSL to run Linux GUI applications, displaying and allowing for interaction in the Windows environment.
 2. Run XLaunch in Windows. You can leave the settings at its default, but make sure that the option “Disable access control” is checked.
 3. When prompted, select allow in the Windows Firewall prompt.
