@@ -26,7 +26,9 @@ Assignment for Airline Booking App
 ## Setup Instructions (Optional, For WSL users)
 
 The following steps are specific to users attempting to run this in the Windows Subsystem for Linux (WSL) environment, namely WSL2, which was what this project was developed in.
+
 Since the host OS (Windows 10) and WSL2 are essentially in separate environments (WSL2 has its own virtualized ethernet adapter, and therefore a unique IP address from the host machine), Selenium Webdriver running in WSL2 will not be able to locate the browser binaries in the host OS; it only attempts to look for it in its own environment.
+
 While it is possible to specify the location of the binaries/exe files on the hostmachine (Windows' `C:/` drive is mounted in WSL under /`mnt/c/`), several issues tend to occur, namely the browser (Google Chrome in this case) opening a blank window or error popups indicating issues with access permissions.
 
 Ultimately, the intention here is to explore the option of running everyting within the WSL environment.
