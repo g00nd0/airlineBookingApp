@@ -5,15 +5,11 @@ class LoginHelper extends CommonClass {
     super();
 
     this.getLoginPage = (homeUrl) => {
-      getPage(homeUrl, "login");
+      this.getPage(homeUrl, "login");
     };
 
-    // this.getLoginPage = (homeUrl) => {
-    //   browser.get(`${homeUrl}/login`);
-    // };
-
     this.getResetPwPage = (homeUrl) => {
-      browser.get(`${homeUrl}/pw-reset`);
+      this.getPage(homeUrl, "pw-reset");
     };
 
     this.setLoginCredentials = (username, password) => {
@@ -28,9 +24,16 @@ class LoginHelper extends CommonClass {
     };
 
     // create clickLoginSubmit
+    this.clickLoginSubmit = (expectedResFn) => {
+      this.clickButton("loginSubmit", expectedResFn);
+    };
 
-    this.clickButton = (xpath, expectedResFn) => {
-      element(by.xpath(xpath)).click().then(expectedResFn);
+    this.clickLogout = (expectedResFn) => {
+      this.clickButton("logout", expectedResFn);
+    };
+
+    this.clickResetSubmit = (expectedResFn) => {
+      this.clickButton("resetSubmit", expectedResFn);
     };
   }
 }

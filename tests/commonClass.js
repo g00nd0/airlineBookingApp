@@ -9,8 +9,8 @@ class CommonClass {
       browser.get(`${homeUrl}/${pageName}`);
     };
 
-    this.clickButton = (xpath, expectedResFn) => {
-      element(by.xpath(xpath)).click().then(expectedResFn);
+    this.clickButton = (elementId, expectedResFn) => {
+      element(by.id(elementId)).click().then(expectedResFn);
     };
   }
 }

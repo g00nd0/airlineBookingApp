@@ -10,13 +10,13 @@ describe("Agent Airline Booking App", function () {
   it("should login successfully", function () {
     loginActions.setLoginCredentials("g00nd0", "abcd1234");
 
-    loginActions.clickButton('//*[@id="loginSubmit"]', () => {
+    loginActions.clickLoginSubmit(() => {
       expect(browser.getCurrentUrl()).toEqual(`${homeUrl}/bookings`);
     });
   });
 
   it("should fail login, with no credentials entered", function () {
-    loginActions.clickButton('//*[@id="loginSubmit"]', () => {
+    loginActions.clickLoginSubmit(() => {
       expect(element(by.tagName("ngb-alert")).getText()).toContain(
         "Crendentials cannot be empty, please enter your username and password."
       );
@@ -25,7 +25,7 @@ describe("Agent Airline Booking App", function () {
 
   it("should fail login, when entering existing username with wrong password", function () {
     loginActions.setLoginCredentials("g00nd0", "thispasswordis$h!t");
-    loginActions.clickButton('//*[@id="loginSubmit"]', () => {
+    loginActions.clickLoginSubmit(() => {
       expect(element(by.tagName("ngb-alert")).getText()).toContain(
         "Login error, please check your credentials"
       );
@@ -34,8 +34,8 @@ describe("Agent Airline Booking App", function () {
 
   it("shoud log out successfully", function () {
     loginActions.setLoginCredentials("g00nd0", "abcd1234");
-    loginActions.clickButton('//*[@id="loginSubmit"]');
-    loginActions.clickButton('//*[@id="logout"]', () => {
+    loginActions.clickLoginSubmit();
+    loginActions.clickLogout(() => {
       expect(browser.getCurrentUrl()).toEqual(`${homeUrl}/`);
     });
   });
@@ -44,7 +44,7 @@ describe("Agent Airline Booking App", function () {
   it("should reset password successfully", function () {
     loginActions.getResetPwPage(homeUrl);
     loginActions.setResetPwDetails("g00nd0", "abcd1234", "abcd1234");
-    loginActions.clickButton('//*[@id="resetSubmit"]', () => {
+    loginActions.clickResetSubmit(() => {
       expect(browser.getCurrentUrl()).toEqual(`${homeUrl}/login`);
     });
   });
@@ -53,7 +53,7 @@ describe("Agent Airline Booking App", function () {
   it("should not reset password, for a user that does not exist", function () {
     loginActions.getResetPwPage(homeUrl);
     loginActions.setResetPwDetails("notauser1", "abcd1234", "abcd1234");
-    loginActions.clickButton('//*[@id="resetSubmit"]', () => {
+    loginActions.clickResetSubmit(() => {
       expect(element(by.tagName("ngb-alert")).getText()).toContain(
         "User does not exist, please register for a new account."
       );
@@ -63,7 +63,7 @@ describe("Agent Airline Booking App", function () {
   // forget password fail - all fields blank
   it("should not reset password, for incomplete form with 1 empty field", function () {
     loginActions.getResetPwPage(homeUrl);
-    loginActions.clickButton('//*[@id="resetSubmit"]', () => {
+    loginActions.clickResetSubmit(() => {
       expect(element(by.tagName("ngb-alert")).getText()).toContain(
         "Fields cannot be empty, make sure that the fields are filled in."
       );
