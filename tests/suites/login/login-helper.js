@@ -1,12 +1,16 @@
-class userLogin {
+const CommonClass = require("../../commonClass");
+
+class LoginHelper extends CommonClass {
   constructor() {
-    this.usernameInput = element(by.name("username"));
-    this.passwordInput = element(by.name("password"));
-    this.passwordConfirmInput = element(by.name("passwordConfirm"));
+    super();
 
     this.getLoginPage = (homeUrl) => {
-      browser.get(`${homeUrl}/login`);
+      getPage(homeUrl, "login");
     };
+
+    // this.getLoginPage = (homeUrl) => {
+    //   browser.get(`${homeUrl}/login`);
+    // };
 
     this.getResetPwPage = (homeUrl) => {
       browser.get(`${homeUrl}/pw-reset`);
@@ -23,10 +27,12 @@ class userLogin {
       this.passwordConfirmInput.sendKeys(passwordConfirm);
     };
 
+    // create clickLoginSubmit
+
     this.clickButton = (xpath, expectedResFn) => {
       element(by.xpath(xpath)).click().then(expectedResFn);
     };
   }
 }
 
-module.exports = userLogin;
+module.exports = LoginHelper;
