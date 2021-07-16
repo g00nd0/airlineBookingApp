@@ -23,7 +23,6 @@ class LoginHelper extends CommonClass {
       this.passwordConfirmInput.sendKeys(passwordConfirm);
     };
 
-    // create clickLoginSubmit
     this.clickLoginSubmit = (expectedResFn) => {
       this.clickButton("loginSubmit", expectedResFn);
     };
