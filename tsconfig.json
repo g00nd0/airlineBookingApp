@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "declaration": false,
+    "noImplicitAny": false
+    // "outDir": "tmp"
+  },
+  "lib": ["es5", "es6", "dom"],
+  "include": ["tests/**/*.ts"],
+  "exclude": ["node_modules", "frontend"]
+}
