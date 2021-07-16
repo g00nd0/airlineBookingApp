@@ -4,7 +4,7 @@
   "description": "Assignment for Airline Booking App",
   "main": "app.js",
   "scripts": {
-    "test": "protractor ./tests/conf.js"
+    "test": "tsc && protractor ./tests/conf.js"
   },
   "repository": {
     "type": "git",
