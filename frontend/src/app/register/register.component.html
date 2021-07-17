@@ -25,14 +25,14 @@
     />
   </div>
   <div class="form-group">
-    <label for="passwordVer">Verify Password</label>
+    <label for="passwordConfirm">Verify Password</label>
     <input
-      id="passwordVer"
+      id="passwordConfirm"
       type="password"
-      [(ngModel)]="passwordVer"
-      name="passwordVer"
+      [(ngModel)]="passwordConfirm"
+      name="passwordConfirm"
       class="form-control"
-      (ngModelChange)="registerCheck('passwordVer', passwordVer)"
+      (ngModelChange)="registerCheck('passwordConfirm', passwordConfirm)"
     />
   </div>
   <div class="form-group">

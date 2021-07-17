@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   username!: String;
   email!: String;
   password!: String;
-  passwordVer!: String;
+  passwordConfirm!: String;
   userType!: String;
   newUser: Observable<any> | undefined;
   user!: Observable<any>;
@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
         this.selfClosingAlert.close();
         failMsg = '';
       }
-    } else if (inputId === 'passwordVer') {
+    } else if (inputId === 'passwordConfirm') {
       if (inputText !== this.password) {
         failMsg = 'Password does not match';
       } else {
@@ -115,7 +115,7 @@ export class RegisterComponent implements OnInit {
       failMsg.length > 0 ||
       this.username.length < 8 ||
       this.password.length < 8 ||
-      this.passwordVer !== this.password ||
+      this.passwordConfirm !== this.password ||
       !this.email ||
       !(this.userType === 'Agent')
     ) {
