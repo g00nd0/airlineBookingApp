@@ -27,5 +27,3 @@ export class CommonClass {
     };
   }
 }
-
-// module.exports = CommonClass;

@@ -1,4 +1,3 @@
-// const LoginHelper = require("./login-helper.ts");
 import { browser, element, by } from "protractor";
 import { LoginHelper } from "./login-helper";
 const loginActions = new LoginHelper();

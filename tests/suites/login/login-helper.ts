@@ -1,5 +1,3 @@
-// const CommonClass = require("../../commonClass.ts");
-
 import { CommonClass } from "../../commonClass";
 
 export class LoginHelper extends CommonClass {
@@ -49,5 +47,3 @@ export class LoginHelper extends CommonClass {
     };
   }
 }
-
-// module.exports = LoginHelper;
