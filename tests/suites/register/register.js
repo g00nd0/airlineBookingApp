@@ -1,55 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const protractor_1 = require("protractor");
+const register_helper_1 = require("./register-helper");
+const registerActions = new register_helper_1.RegisterHelper();
+const homeUrl = "http://localhost:4200";
 describe("Agent Airline Booking App", function () {
-  beforeEach(function () {
-    browser.get("http://localhost:4200/register");
-  });
-
-  it("should pop up warning when entering username with less than 8 characters", function () {
-    element(by.id("username"))
-      .sendKeys("blah123")
-      .then(function () {
-        expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(
-          false
-        );
-        // expect(element(by.tagName("ngb-alert")).getText()).toContain(
-        //   "Username must be at least 8 characters long and contain no spaces."
-        // );
-      });
-  });
-
-  it("should have submit disabled, when any field does not meet their respective requirement", function () {
-    browser.sleep(1000);
-    element(by.id("username")).sendKeys("mym");
-    element(by.id("password")).sendKeys("abcd1234");
-    element(by.id("passwordVer")).sendKeys("abcd1234");
-    element(by.id("email")).sendKeys("myemail@mail.com");
-    element(by.tagName("option", "Booking Agent")).click();
-    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(false);
-  });
-
-  it("should successfully register", function () {
-    browser.sleep(1000);
-    element(by.id("username")).sendKeys("abcd1234");
-    element(by.id("password")).sendKeys("abcd1234");
-    element(by.id("passwordVer")).sendKeys("abcd1234");
-    element(by.id("email")).sendKeys("myemail@mail.com");
-    element(by.name("userType")).click();
-    browser.sleep(1000);
-    element(by.cssContainingText("option", "Booking Agent")).click();
-    browser.sleep(1000);
-    expect(element(by.xpath('//*[@id="regSubmit"]')).isEnabled()).toBe(true);
-    element(by.xpath('//*[@id="regSubmit"]'))
-      .click()
-      .then(
-        function () {
-          // expect(element(by.tagName("ngb-alert")).getText()).toContain(
-          //   "Account Created, redirecting to login page..."
-          // );
-          // test
-          expect(browser.getCurrentUrl()).toEqual(
-            "http://localhost:4200/login"
-          );
-        },
-        function (err) {}
-      );
-  });
+    beforeEach(function () {
+        registerActions.getRegisterPage(homeUrl);
+    });
+    it("should pop up warning when entering username with less than 8 characters", function () {
+        registerActions.setRegisterCredentials("blah123"); // only send keys to username
+        registerActions.checkRegButtonStatus(false);
+    });
+    it("should have submit disabled, when any field does not meet their respective requirement", function () {
+        registerActions.setRegisterCredentials("mym", "abcd1234", "abcd1234", "myemail@mail.com", "Booking Agent");
+        registerActions.checkRegButtonStatus(false);
+    });
+    it("should successfully register", function () {
+        registerActions.setRegisterCredentials("abcd1234", "abcd1234", "abcd1234", "myemail@mail.com", "Booking Agent");
+        registerActions.checkRegButtonStatus(true);
+        registerActions.clickRegSubmit(() => {
+            expect(protractor_1.browser.getCurrentUrl()).toEqual("http://localhost:4200/login");
+        });
+    });
 });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJyZWdpc3Rlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDJDQUFxQztBQUNyQyx1REFBbUQ7QUFDbkQsTUFBTSxlQUFlLEdBQUcsSUFBSSxnQ0FBYyxFQUFFLENBQUM7QUFDN0MsTUFBTSxPQUFPLEdBQUcsdUJBQXVCLENBQUM7QUFDeEMsUUFBUSxDQUFDLDJCQUEyQixFQUFFO0lBQ3BDLFVBQVUsQ0FBQztRQUNULGVBQWUsQ0FBQyxlQUFlLENBQUMsT0FBTyxDQUFDLENBQUM7SUFDM0MsQ0FBQyxDQUFDLENBQUM7SUFFSCxFQUFFLENBQUMsMEVBQTBFLEVBQUU7UUFDN0UsZUFBZSxDQUFDLHNCQUFzQixDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUMsNkJBQTZCO1FBQ2hGLGVBQWUsQ0FBQyxvQkFBb0IsQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUM5QyxDQUFDLENBQUMsQ0FBQztJQUVILEVBQUUsQ0FBQyx3RkFBd0YsRUFBRTtRQUMzRixlQUFlLENBQUMsc0JBQXNCLENBQ3BDLEtBQUssRUFDTCxVQUFVLEVBQ1YsVUFBVSxFQUNWLGtCQUFrQixFQUNsQixlQUFlLENBQ2hCLENBQUM7UUFDRixlQUFlLENBQUMsb0JBQW9CLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDOUMsQ0FBQyxDQUFDLENBQUM7SUFFSCxFQUFFLENBQUMsOEJBQThCLEVBQUU7UUFDakMsZUFBZSxDQUFDLHNCQUFzQixDQUNwQyxVQUFVLEVBQ1YsVUFBVSxFQUNWLFVBQVUsRUFDVixrQkFBa0IsRUFDbEIsZUFBZSxDQUNoQixDQUFDO1FBQ0YsZUFBZSxDQUFDLG9CQUFvQixDQUFDLElBQUksQ0FBQyxDQUFDO1FBQzNDLGVBQWUsQ0FBQyxjQUFjLENBQUMsR0FBRyxFQUFFO1lBQ2xDLE1BQU0sQ0FBQyxvQkFBTyxDQUFDLGFBQWEsRUFBRSxDQUFDLENBQUMsT0FBTyxDQUFDLDZCQUE2QixDQUFDLENBQUM7UUFDekUsQ0FBQyxDQUFDLENBQUM7SUFDTCxDQUFDLENBQUMsQ0FBQztBQUNMLENBQUMsQ0FBQyxDQUFDIn0=
